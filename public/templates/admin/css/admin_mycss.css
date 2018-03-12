@@ -1,0 +1,63 @@
+.btn-them{
+	margin: 5px 5px 10px 10px
+}
+.btn-del{
+	padding: 5px 10px !important;
+	margin: 0px 0px 0px 10px;
+}
+.error{
+	color: #dd4b39;
+	margin: 2px 0px 2px 0px !important
+}
+
+.box.box-solid{
+	background: #4a5c5fc7 !important;
+}
+input[type="file"]{
+	width: 100%;
+}
+
+/*#frmThemUser input[type="file"]{
+	width: 100%;
+	}*/
+	#frmThemUser select{
+		color: black !important;
+	}
+/*#frmSuaUser input[type="file"]{
+	width: 100%;
+	}*/
+	.avatar{
+		max-width: 80px !important;
+		max-height: 50px;
+	}
+	#hinhcu{
+		position: relative;
+		max-width: 200px;
+	}
+	#hinhcu #delImg{
+		position: absolute;
+		color: red;
+		font-size: 22px;
+		right:0;
+		cursor: pointer;
+		}#hinhcu #delImg img{
+			position: absolute;
+		}
+
+		.modal-content {
+			/*min-width: 750px; */
+		}
+		.navbar-nav>.user-menu>.dropdown-menu>.user-footer{
+			background: rgba(60, 141, 188, 0.7);
+		}
+		.notify{
+			background-color: #367fa9 !important;
+			border-color: #367fa9 !important;
+			margin-left: 1% !important;
+			display: inline-block;
+		}
+		.main-sidebar{
+			min-height:100px !important;
+		}
+	
+		
