@@ -211,14 +211,8 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/raphael/raphael.min.js"></script>
+
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
@@ -226,12 +220,7 @@
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/fastclick/lib/fastclick.js"></script>
+
 <!-- AdminLTE App -->
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -242,13 +231,9 @@
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/js/jquery.validate.min.js"></script>
 <!-- iCheck -->
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/iCheck/icheck.min.js"></script>
-<script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/Croppie/croppie.js"></script>
-
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/js/myscript.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/sweetalert2.all.js"></script>
 {{-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> --}}

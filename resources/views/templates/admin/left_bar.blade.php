@@ -24,14 +24,14 @@
       <li><a href=""><i class="fa fa-sliders"></i> <span>Slider</span></a></li>
        <li class="treeview">
           <a href="javascript:void(0)">
-            <i class="fa  fa-th-large"></i> <span>Dự án</span>
+            <i class="fa  fa-th-large"></i> <span>Sản phẩm</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu" style="display: none;">
-            <li><a href=""><i class="fa fa-tag"></i>Loại dự án</a></li>
-            <li><a href=""><i class="fa fa-book"></i>Dự án</a></li>
+            <li><a href=" {{ route('admin.category.index') }}"><i class="fa fa-tag"></i>Danh mục</a></li>
+            <li><a href=""><i class="fa fa-book"></i>Sản phẩm</a></li>
           </ul>
         </li>
       <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>

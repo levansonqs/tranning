@@ -23,8 +23,8 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
-            <h3><span class="statistic-counter"></span></h3>
-
+            <h3><span class="statistic-counter"> {{  100 }} </span></h3>
+           
             <p>Tổng bài viết</p>
           </div>
           <div class="icon">
@@ -38,8 +38,7 @@
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-            <h3><span class="statistic-counter"></span></h3>
-
+            <h3><span class="statistic-counter">{{  100 }}</span></h3>
             <p>Tổng danh mục </p>
           </div>
           <div class="icon">
@@ -53,7 +52,7 @@
         <!-- small box -->
         <div class="small-box bg-yellow">
           <div class="inner">
-            <h3> <span class="statistic-counter"></span></h3>
+            <h3> <span class="statistic-counter">{{  100 }}</span></h3>
 
             <p>Tổng thành viên</p>
           </div>
