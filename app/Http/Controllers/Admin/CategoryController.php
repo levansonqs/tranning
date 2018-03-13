@@ -14,13 +14,34 @@ class CategoryController extends Controller
 
 	public function index(){
 		$objCategory = $this->objmCategory->getItems();
-		return view('admin.category.index',compact('objCategory'));
+		$objParent = $this->objmCategory->getParent();
+		return view('admin.category.index',compact('objCategory','objParent'));
 	}
 
-	public function add(Request $request){    	
+	public function getAdd(){
+		$objParent = $this->objmCategory->getParent();
+		return view('admin.category.add',compact('objParent'));
+	}
+
+	public function postAdd(Request $request){    	
 		if($this->objmCategory->addItem($request)){
-			echo 'ok';
+			$request->session()->flash('msg','Thêm thành công');
+			return redirect()->route('admin.category.index');
 		}
+	}
+
+
+	public function getEdit($id){
+		$objCat = $this->objmCategory->getItem($id);
+		$objParent = $this->objmCategory->getParent();
+		return view('admin.category.edit',compact('objCat','objParent'));
+	}
+
+	public function postEdit($id){
+	 if($this->objmCategory->editItem($id)){
+	 	$request->session()->flash('msg','Sửa thành công !');
+	 	return redirect()->route('admin.category.index');
+	 }
 	}
 
 	public function del(Request $request, $id){

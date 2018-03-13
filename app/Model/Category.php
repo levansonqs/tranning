@@ -21,12 +21,29 @@ class Category extends Model
     public function getItems(){
         return $this->all();
     }
+    public function getParent(){
+        return $this->where('parent_id','=',0)->get();
+    }
 
     public function addItem($request){
         $this->name = $request->name;
+        $this->parent_id = $request->parent_id;
         $this->description= $request->description;
         return $this->save();
     }
+
+    public function getItem($id){
+        return $this->find($id);
+
+    }
+    public function editItem($id,$request){
+        $objItem = $this->find($id);
+        $objItem->name = $request->name;
+        $objItem->parent_id = $request->parent_id;
+        $objItem->description = $request->description;
+        return $this->save();
+    }
+
     public function delItem($id){
         $objItem = $this->findOrFail($id);
         return $objItem->delete();

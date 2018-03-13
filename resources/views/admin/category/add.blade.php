@@ -21,34 +21,30 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title text-success">SỬA DANH MỤC</h3>
+            <h3 class="box-title text-success">DANH SÁCH DANH MỤC</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
            <div class="row">
             <div class="col-md-5">
-              <form role="form" method="post" action="{{ route('admin.category.edit',$objCat->id) }}" enctype='multipart/form-data'>
+              <form role="form" method="post" action="{{ route('admin.category.add') }}" id=""  enctype='multipart/form-data'>
                 {{csrf_field()}}              
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label for="">Tên</label>
                     <input type="text" class="form-control" placeholder="Nhập tên"
-                    name="name" required value=" {{$objCat->name}} ">              
+                    name="name" required>              
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-12">                  
                     <label for="">Danh mục cha</label>
                     <select name="parent_id" id="parent_id" class="form-control required" required>
-                       @php   
-                            $selected = ""  ;
-                       @endphp
                       <option value="0">--Chọn danh mục cha--</option>
                       @foreach ($objParent as $item)
-                      @php
-                          if($item->parent_id == $objCat->parent_id) $selected = "selected";
+                      @php           
                       @endphp
-                        <option value="{{$item->id}}" {{$selected}} >{{$item->name}}</option>
+                      <option value="{{$item->id}}">{{$item->name}}</option>
                       @endforeach
                     </select>
                   </div>
@@ -56,13 +52,11 @@
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label for="">Mô tả</label>
-                    <textarea name="description" id="inputDes" class="form-control" rows="3" required="required">{{
-                      $objCat->description
-                    }}                     
+                    <textarea name="description" id="inputDes" class="form-control" rows="3" required="required">                      
                     </textarea>           
                   </div>
                 </div>          
-                <button type="submit" class="btn btn-primary btn-lg" >Sửa</button>
+                <button type="submit" class="btn btn-primary btn-lg" >Thêm danh mục</button>
               </form>
 
             </div>
@@ -74,4 +68,5 @@
 </section>
 <!-- /.content -->
 </div>
+
 @stop()
