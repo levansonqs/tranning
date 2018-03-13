@@ -36,13 +36,14 @@ class Category extends Model
         return $this->find($id);
 
     }
-    public function editItem($id,$request){
+    public function editItem($request,$id){
         $objItem = $this->find($id);
         $objItem->name = $request->name;
         $objItem->parent_id = $request->parent_id;
-        $objItem->description = $request->description;
-        return $this->save();
+        $objItem->description = $request->description;      
+        return $objItem->save();
     }
+
 
     public function delItem($id){
         $objItem = $this->findOrFail($id);

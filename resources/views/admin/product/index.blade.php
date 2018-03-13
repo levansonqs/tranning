@@ -5,37 +5,40 @@
  	<!-- Content Header (Page header) -->
  	<section class="content-header">
  		<h1>
- 			QUẢN LÝ DANH MỤC
+ 			QUẢN LÝ SẢN PHẨM
  		</h1>
  		<ol class="breadcrumb">
  			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
- 			<li class="active">Danh mục </li>
+ 			<li class="active">Sản phẩm </li>
  		</ol>
  	</section>
  	@if (Session::has('msg'))
  	<br>
  	<p class="alert alert-success">{{ Session::get('msg') }}</p>
  	@endif
-
  	<!-- Main content -->
  	<section class="content">  
  		<div class="row">       
  			<div class="col-xs-12">
  				<div class="box">
  					<div class="box-header">
- 						<h3 class="box-title text-success">DANH SÁCH DANH MỤC</h3>
+ 						<h3 class="box-title text-success">DANH SÁCH SẢN PHẨM</h3>
  					</div>
  					<!-- /.box-header -->
- 					<a href=" {{ route('admin.category.add') }} " class="btn btn-success btn-flat btn-them"><i class="fa fa-plus"></i>
- 						Thêm danh mục
+ 					<a href=" {{ route('admin.product.add') }} " class="btn btn-success btn-flat btn-them"><i class="fa fa-plus"></i>
+ 						Thêm Sản phẩm
  					</a>
  					<div class="box-body">
- 						<table id="tb" class="table table-bordered table-striped">
+ 						<table id="tbProduct" class="table table-bordered table-striped">
  							<thead>
  								<tr>
  									<th>ID</th>
- 									<th>Tên danh mục</th> 									
+ 									<th>Tên</th> 									
+ 									<th>Giá </th> 									
+ 									<th>Hình ảnh</th> 									
  									<th>Mô tả</th> 									
+ 									<th>Giảm giá</th> 									
+ 									<th>Tổng sản phẩm</th> 									
  									<th>Chức năng</th>
  								</tr>
  							</thead>
@@ -43,38 +46,26 @@
  								@php
  								$stt = 1;
  								@endphp
- 								@foreach ($objParent as $item)
+ 								@foreach ($objProduct as $item)
  								@php
- 									$urlEdit = route('admin.category.edit',[$item->id]);
- 									$urlDel = route('admin.category.del',[$item->id]);
+ 								$urlEdit = route('admin.product.edit',[$item->id]);
+ 								$urlDel = route('admin.product.del',[$item->id]);
+ 								$picName = "images/".$item->images;
+ 								$urlHinh = Storage::url($picName);
  								@endphp
  								<tr>
  									<td>{{ $stt++ }}</td>
  									<td>{{ $item->name }}</td> 								
+ 									<td>{{ $item->price }}</td> 								
+ 									<td><img src="{{ $urlHinh}}" class="img-responsive thumbnail"></td> 		
  									<td>{{ $item->description }}</td> 									
+ 									<td>{{ $item->discount }} %</td> 									
+ 									<td>{{ $item->total }}</td> 									
  									<td class="text-left">
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
  										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-remove"></i>  Xóa</a>
  									</td>
- 								</tr>
- 								@php
- 									$objCat = DB::table('categories')->where('parent_id','=',$item->id)->get();
- 								@endphp
- 								@foreach ($objCat as $itemCat)
- 								@php
- 									$urlEdit = route('admin.category.edit',[$itemCat->id]);
- 									$urlDel = route('admin.category.del',[$itemCat->id]);
- 								@endphp
- 								<tr>
- 									<td>{{ $stt++ }}</td>
- 									<td><span class="text-danger txt-red">&nbsp;|--</span>{{ $itemCat->name }}</td> 						
- 									<td>{{ $itemCat->description }}</td> 									
- 									<td class="text-left">
- 										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
- 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-remove"></i>  Xóa</a>
- 									</td>
- 								</tr>
- 								@endforeach
+ 								</tr> 
  								@endforeach
  							</tbody>
  						</table>

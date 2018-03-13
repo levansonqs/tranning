@@ -65,7 +65,7 @@ $(document).ready(function() {
     var url = window.location.origin+'/admin/cat/edit/'+id;  
     var name = $("input[name='editname']").val();
     var description = $("#description").val();
-     alert(description); return;
+    alert(description); return;
     $.ajax({
       url:url,
       type:'POST',
@@ -136,5 +136,16 @@ $('#tb').DataTable( {
 'searching'   : true,
 'autoWidth'   : false,
 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+} ); 
+
+$('#tbProduct').DataTable( {
+ "language": {
+  "url": "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Vietnamese.json"
+},
+'ordering'    : false,
+'autoWidth'   : false,
+'searching'   : true,
+'autoWidth'   : false,
+"lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
 } ); 
 
