@@ -24,9 +24,22 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 			'as'=>'admin.category.index'
 		]);
 
-		Route::post('add',[
-			'uses'=>'CategoryController@add',
+		Route::get('add',[
+			'uses'=>'CategoryController@getAdd',
 			'as'=>'admin.category.add'
+		]);
+		Route::post('add',[
+			'uses'=>'CategoryController@postAdd',
+			'as'=>'admin.category.add'
+		]);
+
+		Route::get('edit/{id}',[
+			'uses'=>'CategoryController@getEdit',
+			'as'=>'admin.category.edit'	
+		]);
+		Route::post('edit/{id}',[
+			'uses'=>'CategoryController@postEdit',
+			'as'=>'admin.category.edit'
 		]);
 
 		Route::get('delete/{id}',[
