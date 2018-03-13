@@ -1,6 +1,36 @@
 <?php
 Route::get('/', function () {
-	// return view('welcome');
+	 return view('welcome');
+});
+
+Auth::routes();
+
+Route::group(['namespace'=>'Auth'], function(){
+    Route::group(['prefix'=>'auth'], function(){
+        //login user
+        Route::get('login', [
+            'uses'  => 'AuthController@getLogin',
+            'as'    => 'auth.login',
+        ]);
+        Route::post('login', [
+            'uses'  => 'AuthController@postLogin',
+            'as'    => 'auth.postLogin',
+        ]);
+        //logout
+        Route::get('logout', [
+            'uses'  => 'AuthController@logout',
+            'as'    => 'auth.logout',
+        ]);
+        // //register
+        // Route::get('register', [
+        //     'uses'  => 'RegisterController@getRegister',
+        //     'as'    => 'admin.user.register',
+        // ]);
+        // Route::post('register', [
+        //     'uses'  => 'RegisterController@postRegister',
+        //     'as'    => 'admin.user.register',
+        // ]);
+    });
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function(){
@@ -54,5 +84,9 @@ Route::group(['namespace'=>'Shop'], function(){
         'as'    => 'shop.index.index'
     ]);
 });
+
+
+
+
 
 

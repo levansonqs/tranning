@@ -73,16 +73,25 @@
      
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="" class="user-image" alt="User Image">
+                <img src="" class="user-image">
                 <span class="hidden-xs"></span>
               </a>
+          
               <ul class="dropdown-menu">
                 <!-- User image -->
+                @if (Auth::check())
+                  @php
+                      $user = Auth::user();
+                      $fullname = $user->fullname;
+                      $avatar = $user->avatar;
+                  @endphp
+                  <p class="centered"><img src="/storage/app/files/{{ $avatar }}" class="img-circle" height="55" width="60"></p>
+                  <h5 class="centered">{{ $fullname }}</h5>
+                @endif
                 <li class="user-header">
-                   <?php  $avatar ='/images/userDefault.png'; ?>
-                   {{-- <img src="{{ $avatar }}" class="img-circle" alt="User Image"> --}}
-
-                  <p>                 
+                   <img src="" class="img-circle" alt="User Image">
+                  <p> 
+                     {{ $fullname }}     
                   </p>
                 </li>    
               <!-- Menu Footer-->
@@ -91,7 +100,7 @@
                   <a href="" class="btn btn-default btn-flat">Hồ sơ</a>
                 </div>
                 <div class="pull-right">
-                  <a href="" class="btn btn-default btn-flat">Đăng xuất</a>
+                  <a href="{{ route('auth.logout') }}" class="btn btn-default btn-flat">Đăng xuất</a>
                 </div>
               </li>
             </ul>

@@ -27,6 +27,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+    public function setLevelAttribute($value)
+    {
+        $this->attributes['level'] = 0;
+    }
+
     public function product() {
         return $this->hasMany('App\Model\Product', 'user_id');
     }
