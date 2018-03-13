@@ -59,5 +59,11 @@ input[type="file"]{
 		.main-sidebar{
 			min-height:100px !important;
 		}
-	
-		
+
+		.txt-red{
+			color: red;
+			padding: 0px 5px;
+		}
+.thumbnail{
+	max-width: 80px !important;
+}

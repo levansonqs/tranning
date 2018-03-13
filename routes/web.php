@@ -41,12 +41,6 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-	Route::prefix('user')->group(function(){
-		Route::get('index',[
-			'uses'=>'UserController@index',
-			'as'=>'admin.user.index'
-		]);
-	});
 
 	Route::prefix('category')->group(function(){
 		Route::get('index',[
@@ -77,12 +71,46 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 			'as'=>'admin.category.del'
 		]);
 	});
+
+
+	Route::prefix('product')->group(function(){
+		Route::get('index',[
+			'uses'=>'ProductController@index',
+			'as'=>'admin.product.index'
+		]);
+
+		Route::get('add',[
+			'uses'=>'ProductController@getAdd',
+			'as'=>'admin.product.add'
+		]);
+		Route::post('add',[
+			'uses'=>'ProductController@postAdd',
+			'as'=>'admin.product.add'
+		]);
+
+		Route::get('edit/{id}',[
+			'uses'=>'ProductController@getEdit',
+			'as'=>'admin.product.edit'	
+		]);
+		Route::post('edit/{id}',[
+			'uses'=>'ProductController@postEdit',
+			'as'=>'admin.product.edit'
+		]);
+
+		Route::get('delete/{id}',[
+			'uses'=>'ProductController@del',
+			'as'=>'admin.product.del'
+		]);
+	});
+
+
+
 });
 Route::group(['namespace'=>'Shop'], function(){
-    Route::get('index', [
-        'uses'  => 'IndexController@index',
-        'as'    => 'shop.index.index'
-    ]);
+	Route::get('index', [
+		'uses'  => 'IndexController@index',
+		'as'    => 'shop.index.index'
+	]);
 });
 
 

@@ -37,8 +37,9 @@ class CategoryController extends Controller
 		return view('admin.category.edit',compact('objCat','objParent'));
 	}
 
-	public function postEdit($id){
-	 if($this->objmCategory->editItem($id)){
+	public function postEdit(Request $request, $id){
+		// dd($request);
+	 if($this->objmCategory->editItem($request,$id)){
 	 	$request->session()->flash('msg','Sửa thành công !');
 	 	return redirect()->route('admin.category.index');
 	 }

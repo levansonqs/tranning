@@ -10,7 +10,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Dashboard</li>
+      <li class="active">Danh mục</li>
     </ol>
   </section>
 
@@ -24,6 +24,9 @@
             <h3 class="box-title text-success">SỬA DANH MỤC</h3>
           </div>
           <!-- /.box-header -->
+         {{--  @php
+            dd($objCat);
+          @endphp --}}
           <div class="box-body">
            <div class="row">
             <div class="col-md-5">
@@ -39,14 +42,11 @@
                 <div class="row">
                   <div class="form-group col-md-12">                  
                     <label for="">Danh mục cha</label>
-                    <select name="parent_id" id="parent_id" class="form-control required" required>
-                       @php   
-                            $selected = ""  ;
-                       @endphp
+                    <select name="parent_id" id="parent_id" class="form-control required" required>                      
                       <option value="0">--Chọn danh mục cha--</option>
                       @foreach ($objParent as $item)
                       @php
-                          if($item->parent_id == $objCat->parent_id) $selected = "selected";
+                          if($objCat->parent_id == $item->id) $selected = "selected";else $selected = '';
                       @endphp
                         <option value="{{$item->id}}" {{$selected}} >{{$item->name}}</option>
                       @endforeach

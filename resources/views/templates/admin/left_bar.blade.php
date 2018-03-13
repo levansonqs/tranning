@@ -30,8 +30,8 @@
             </span>
           </a>
           <ul class="treeview-menu" style="display: none;">
-            <li><a href=" {{ route('admin.category.index') }}"><i class="fa fa-tag"></i>Danh mục</a></li>
-            <li><a href=""><i class="fa fa-book"></i>Sản phẩm</a></li>
+            <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-tag"></i>Danh mục</a></li>
+            <li><a href="{{ route('admin.product.index') }}"><i class="fa fa-book"></i>Sản phẩm</a></li>
           </ul>
         </li>
       <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
