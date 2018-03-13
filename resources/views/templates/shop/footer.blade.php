@@ -1,176 +1,174 @@
- <footer id="footer" class="footer">
-        	<div class="container">
-        		<div class="row">
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <!--Footer-->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="companyinfo">
+                            <h2><span>e</span>-shopper</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="/templates/shopping/images/home/iframe1.png" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Circle of Hands</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
 
-        			<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
-        				<div class="footer-single">
-        					Hoainamptit
-        					<p>Hy vọng sẽ được làm việc cùng.</p>
-        				</div>
-        			</div>
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="/templates/shopping/images/home/iframe2.png" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Circle of Hands</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
 
-        			<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-        				<div class="footer-single">
-        					<h6>Đăng kí </h6>
-        					<form action="#" class="subscribe">
-        						<input type="text" name="subscribe" id="subscribe">
-        						<input type="submit" value="&#8594;" id="subs">
-        					</form>
-        					<p>Hệ thống thiết kế website hoainamptit </p>
-        				</div>
-        			</div>
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="/templates/shopping/images/home/iframe3.png" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Circle of Hands</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
 
-        			<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
-        				<div class="footer-single">
-        					<h6>Khám phá</h6>
-        					<ul>
-        						<li><a href="#">Facebook</a></li>
-        						<li><a href="#">Flickr</a></li>
-        						<li><a href="#">Google</a></li>
-        						<li><a href="#">Diễn đàn</a></li>
-        					</ul>
-        				</div>
-        			</div>
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="/templates/shopping/images/home/iframe4.png" alt="" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Circle of Hands</p>
+                                <h2>24 DEC 2014</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="address">
+                            <img src="/templates/shopping/images/home/map.png" alt="" />
+                            <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        			<div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
-        				<div class="footer-single">
-        					<h6>Hỗ trợ</h6>
-        					<ul>
-        						<li><a href="#">Liên hệ</a></li>
-        						<li><a href="#">Tìm việc</a></li>
-        						<li><a href="#">Hỗ trợ</a></li>
-        						<li><a href="#">Thông tin</a></li>
-        					</ul>
-        				</div>
-        			</div>
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Service</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Online Help</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Order Status</a></li>
+                                <li><a href="#">Change Location</a></li>
+                                <li><a href="#">FAQ’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Quock Shop</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">T-Shirt</a></li>
+                                <li><a href="#">Mens</a></li>
+                                <li><a href="#">Womens</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Shoes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privecy Policy</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                                <li><a href="#">Billing System</a></li>
+                                <li><a href="#">Ticket System</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>About Shopper</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Company Information</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Store Location</a></li>
+                                <li><a href="#">Affillate Program</a></li>
+                                <li><a href="#">Copyright</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget">
+                            <h2>About Shopper</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Your email address" />
+                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                            </form>
+                        </div>
+                    </div>
 
-        		</div>
-        		<div class="row">
-        			<div class="col-md-12">
-        				<p class="copyright text-center">
-        					Copyright © 2017 <a href="http://myclass.vn/">HoaiNamPTIT</a>. Thiết kết website<a href="https://namcit.blogspot.com/">HoaiNamICT</a>
-        				</p>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
+                </div>
+            </div>
+        </div>
 
-        <a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+                    <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                </div>
+            </div>
+        </div>
 
-		<!-- Essential jQuery Plugins
-			================================================== -->
-			<!-- Main jQuery -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery-1.11.1.min.js"></script>
-			<!-- Single Page Nav -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery.singlePageNav.min.js"></script>
-			<!-- Twitter Bootstrap -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/bootstrap.min.js"></script>
-			<!-- jquery.fancybox.pack -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery.fancybox.pack.js"></script>
-			<!-- jquery.mixitup.min -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery.mixitup.min.js"></script>
-			<!-- jquery.parallax -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery.parallax-1.1.3.js"></script>
-			<!-- jquery.countTo -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery-countTo.js"></script>
-			<!-- jquery.appear -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery.appear.js"></script>
-			<!-- Contact form validation -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery-form/jquery.form.js"></script>
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery-validate/jquery.validate.min.js"></script>
-			<!-- Google Map -->
-			<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-			<!-- jquery easing -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/jquery.easing.min.js"></script>
-			<!-- jquery easing -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/wow.min.js"></script>
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/skill.bars.jquery.js"></script>
-			<script>
-				var wow = new WOW ({
-				boxClass:     'wow',      // animated element css class (default is wow)
-				animateClass: 'animated', // animation css class (default is animated)
-				offset:       120,          // distance to the element when triggering the animation (default is 0)
-				mobile:       false,       // trigger animations on mobile devices (default is true)
-				live:         true        // act on asynchronously loaded content (default is true)
-			}
-			);
-				wow.init();
-			</script> 
-			<script>
+    </footer>
+    <!--/Footer-->
 
-				$(document).ready(function(){
 
-					$('.skillbar').skillBars({
-						from: 0,
-						speed: 4000, 
-						interval: 100,
-						decimals: 0,
-					});
 
-				});
+    <script src="/templates/shopping/js/jquery.js"></script>
+    <script src="/templates/shopping/js/bootstrap.min.js"></script>
+    <script src="/templates/shopping/js/jquery.scrollUp.min.js"></script>
+    <script src="/templates/shopping/js/price-range.js"></script>
+    <script src="/templates/shopping/js/jquery.prettyPhoto.js"></script>
+    <script src="/templates/shopping/js/main.js"></script>
+</body>
 
-			</script>
-
-			<!-- Custom Functions -->
-			<script src="{{getenv('ABOUTME_TEMPLATE_URL')}}/js/custom.js"></script>
-
-			<script type="text/javascript">
-				$(function(){
-					/* ========================================================================= */
-				/*	Contact Form
-				/* ========================================================================= */
-				
-				$('#contact-form').validate({
-					rules: {
-						name: {
-							required: true,
-							minlength: 2
-						},
-						email: {
-							required: true,
-							email: true
-						},
-						message: {
-							required: true
-						}
-					},
-					messages: {
-						name: {
-							required: "come on, you have a name don't you?",
-							minlength: "your name must consist of at least 2 characters"
-						},
-						email: {
-							required: "no email, no message"
-						},
-						message: {
-							required: "um...yea, you have to write something to send this form.",
-							minlength: "thats all? really?"
-						}
-					},
-					submitHandler: function(form) {
-						$(form).ajaxSubmit({
-							type:"POST",
-							data: $(form).serialize(),
-							url:"process.php",
-							success: function() {
-								$('#contact-form :input').attr('disabled', 'disabled');
-								$('#contact-form').fadeTo( "slow", 0.15, function() {
-									$(this).find(':input').attr('disabled', 'disabled');
-									$(this).find('label').css('cursor','default');
-									$('#success').fadeIn();
-								});
-							},
-							error: function() {
-								$('#contact-form').fadeTo( "slow", 0.15, function() {
-									$('#error').fadeIn();
-								});
-							}
-						});
-					}
-				});
-			});
-		</script>
-	</body>
-	
-<!-- Mirrored from hoainamptit.github.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jan 2018 03:58:12 GMT -->
 </html>

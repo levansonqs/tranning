@@ -35,5 +35,11 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 });
+Route::group(['namespace'=>'Shop'], function(){
+    Route::get('index', [
+        'uses'  => 'IndexController@index',
+        'as'    => 'shop.index.index'
+    ]);
+});
 
 
