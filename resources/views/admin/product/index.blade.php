@@ -62,7 +62,9 @@
  									<td>{{ $item->name }}</td> 								
  									<td>{{ $item->price }}</td> 								
  									<td><img src="{{ $urlHinh}}" class="img-responsive thumbnail"></td> 		
- 									<td>{{ $item->description }}</td> 									
+ 									<td>{{ $item->description }} <br> <br>
+									<button class="btn btn-primary pDetail"  data-toggle="modal" data-target="#detailModal">Chi tiết</button>			
+ 									</td> 									
  									<td>{{ $item->discount }} %</td> 									
  									<td>{{ $item->total }}</td> 
  									<td> {{$item->catName}} </td>									
@@ -76,6 +78,25 @@
  						</table>
  					</div>
  				</div>
+ 			</div>
+ 		</div>
+ 		<!-- Modal -->
+ 		<div id="detailModal" class="modal fade" role="dialog">
+ 			<div class="modal-dialog">
+ 				<!-- Modal content-->
+ 				<div class="modal-content">
+ 					<div class="modal-header">
+ 						<button type="button" class="close" data-dismiss="modal">&times;</button>
+ 						<h4 class="modal-title">Chi tiết sản phẩm</h4>
+ 					</div>
+ 					<div class="modal-body">
+ 						<p></p>
+ 					</div>
+ 					<div class="modal-footer">
+ 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ 					</div>
+ 				</div>
+
  			</div>
  		</div>
 
