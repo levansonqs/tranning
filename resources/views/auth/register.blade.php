@@ -9,18 +9,18 @@
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/templates/admin/bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/templates/admin/bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
-        <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="/templates/admin/bower_components/Ionicons/css/ionicons.min.css">
         <!-- Theme style -->
-        <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="/templates/admin/dist/css/AdminLTE.min.css">
         <!-- iCheck -->
-        <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/iCheck/square/blue.css">
+        <link rel="stylesheet" href="/templates/admin/plugins/iCheck/square/blue.css">
 
         <!-- jQuery 3 -->
-        <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/templates/admin/bower_components/jquery/dist/jquery.min.js"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +34,7 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <a href="{{getenv('ADMIN_TEMPLATE_URL')}}/index2.html"><b>Đăng Ký</b></a>
+                <a href="/templates/admin/index2.html"><b>Đăng Ký</b></a>
             </div>
             <!-- /.login-logo -->
                 @if ($errors->any())
@@ -96,9 +96,9 @@
         </div>
         <!-- /.login-box -->
         <!-- Bootstrap 3.3.7 -->
-        <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/templates/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- iCheck -->
-        <script src="{{getenv('ADMIN_TEMPLATE_URL')}}/plugins/iCheck/icheck.min.js"></script>
+        <script src="/templates/admin/plugins/iCheck/icheck.min.js"></script>
         <script>
             $(function () {
                 $('input').iCheck({

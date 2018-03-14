@@ -71,14 +71,9 @@ class AuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
-        // $token = $user->token;
-        // $tokenSecret = $user->tokenSecret;
-        // $userToken = Socialite::driver('facebook')->userFromToken($token);
-        // return redirect()->route('admin.index.index');
         $find = User::whereEmail($user->getEmail())->first();
         if ($find) {
             Auth::login($find);
-            // return $token = $user->token;
             return redirect()->route('admin.index.index');
         } else {
             $objUser = new user;
@@ -114,7 +109,7 @@ class AuthController extends Controller
             return redirect()->route('admin.index.index');
         } else {
             $objUser = new user;
-            $objUser->username = $user->getName();
+            $objUser->username = str_replace(' ','',$user->getName());
             $objUser->fullname = $user->getName();
             $objUser->email = $user->getEmail();
             $objUser->avatar = $user->getAvatar();
@@ -125,5 +120,4 @@ class AuthController extends Controller
             return redirect()->route('admin.index.index');
         }
     }
-
 }

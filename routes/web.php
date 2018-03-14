@@ -58,7 +58,6 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-
 	Route::prefix('category')->group(function(){
 		Route::get('index',[
 			'uses'=>'CategoryController@index',
@@ -148,9 +147,6 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 			'as'=>'admin.order.delete'
 		]);
 	});
-
-
-
 });
 Route::group(['namespace'=>'Shop'], function(){
 	Route::get('index', [
