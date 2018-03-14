@@ -30,6 +30,14 @@ Route::group(['namespace'=>'Auth'], function(){
             'uses'  => 'RegisterUserController@postRegister',
             'as'    => 'auth.register',
         ]);
+        //login facebook
+        Route::get('login/facebook',[
+            'uses'  => 'AuthController@redirectToProvider',
+            'as'    => 'auth.facebook'
+        ]);
+        Route::get('facebook/callback', [
+            'uses'  =>  'AuthController@handleProviderCallback',
+        ]);
     });
 });
 
