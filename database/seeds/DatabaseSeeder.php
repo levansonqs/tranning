@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	// $this->call(UsersTableSeeder::class);
-    	$this->call(CategoriesTableSeeder::class);
+    	$this->call(ProductsTableSeeder::class);
     }
 }
 
@@ -22,15 +22,18 @@ class CategoriesTableSeeder extends Seeder{
 			[
 				'name'=>'Samsung',
 				'description'=>'Samsung chính hãng',
+				'parent_id' => 0,
 
 			],
 			[
 				'name'=>'Sony',
 				'description'=>'Sony giá rẻ',
+				'parent_id' => 0,
 			],
 			[
 				'name'=>'HTC',
 				'description'=>'HTC giá rẻ',
+				'parent_id' => 0,
 			],
 
 		]);
@@ -123,7 +126,7 @@ class UsersTableSeeder extends Seeder{
 				'level'=>'1',		
 				'avatar'=>'hinh1.jpg',		
 				'address'=>'Đà Nẵng - Viêt Nam',		
-				'status' => 1
+				'status' => 1,
 				'phone'=>'0987665431'
 	
 			],
@@ -136,7 +139,7 @@ class UsersTableSeeder extends Seeder{
 				'level'=>'1',		
 				'avatar'=>'hinh1.jpg',		
 				'address'=>'Đà Nẵng - Viêt Nam',		
-				'status' => 1
+				'status' => 1,
 				'phone'=>'0987665431'
 	
 			],
@@ -149,7 +152,7 @@ class UsersTableSeeder extends Seeder{
 				'level'=>'1',		
 				'avatar'=>'hinh1.jpg',		
 				'address'=>'Quảng Nam - Viêt Nam',		
-				'status' => 1
+				'status' => 1,
 				'phone'=>'0987665431'
 	
 			],	
@@ -170,7 +173,8 @@ class ProductsTableSeeder extends Seeder{
 				'buyed'=>'2',		
 				'total'=>'20',		
 				'cate_id'=>'1',		
-				'user_id'=>'1',		
+				'user_id'=>'1',
+				'detail'=>'abc'		
 			],	
 						[
 				'name'=>'Sam sung 2',
@@ -182,7 +186,8 @@ class ProductsTableSeeder extends Seeder{
 				'buyed'=>'2',		
 				'total'=>'20',		
 				'cate_id'=>'1',		
-				'user_id'=>'1',		
+				'user_id'=>'1',
+				'detail'=>'abc'		
 			],
 						[
 				'name'=>'Sam sung 3',
@@ -194,7 +199,8 @@ class ProductsTableSeeder extends Seeder{
 				'buyed'=>'2',		
 				'total'=>'20',		
 				'cate_id'=>'1',		
-				'user_id'=>'1',		
+				'user_id'=>'1',
+				'detail'=>'abc'		
 			],	
 		]);
 	}

@@ -31,10 +31,7 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
-    public function setLevelAttribute($value)
-    {
-        $this->attributes['level'] = 0;
-    }
+  
 
     public function product() {
         return $this->hasMany('App\Model\Product', 'user_id');
