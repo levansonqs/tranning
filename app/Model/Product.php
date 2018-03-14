@@ -52,15 +52,9 @@ class Product extends Model
         return $objProject->save();
     }
 
-<<<<<<< HEAD
-
-    public function delItem($id){
-=======
-    public function del($id)
-    {
->>>>>>> 3ce9ae820d9b7a04d5b025f8b0fe6883ba8c9654
-        $objItem = $this->findOrFail($id);
-        return $objItem->delete();
-    }
-
+    public function delItem($id)
+        {
+            $objItem = $this->findOrFail($id);
+            return $objItem->delete();
+        }
 }
