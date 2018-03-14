@@ -81,7 +81,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-5 col-xs-offset-2">
-                            <a href="/" title="" class="btn btn-primary btn-block btn-flat"><i class="fa fa-google"></i> Google</a>
+                            <a href="{{ route('auth.google') }}" title="" class="btn btn-primary btn-block btn-flat"><i class="fa fa-google"></i> Google</a>
                         </div>
                         <!-- /.col -->
                     </div>

@@ -31,14 +31,23 @@ Route::group(['namespace'=>'Auth'], function(){
 			'as'    => 'auth.register',
 		]);
         //login facebook
-		Route::get('login/facebook',[
-			'uses'  => 'AuthController@redirectToProvider',
-			'as'    => 'auth.facebook'
-		]);
-		Route::get('facebook/callback', [
-			'uses'  =>  'AuthController@handleProviderCallback',
-		]);
-	});
+
+        Route::get('login/facebook',[
+            'uses'  => 'AuthController@redirectToProvider',
+            'as'    => 'auth.facebook'
+        ]);
+        Route::get('facebook/callback', [
+            'uses'  =>  'AuthController@handleProviderCallback',
+        ]);
+        //login google
+        Route::get('login/google', [
+            'uses'  => 'AuthController@googleRedirectToProvider',
+            'as'    => 'auth.google'
+        ]);
+        Route::get('google/callback', [
+            'uses'  => 'AuthController@googleHandleProviderCallback',
+        ]);
+    });
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function(){
