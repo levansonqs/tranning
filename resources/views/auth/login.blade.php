@@ -63,7 +63,7 @@
                            
                         </div>
                         <div class="col-xs-5 ">
-                            <a href="{{ route('auth.register') }}" title="" class="btn btn-primary btn-block btn-flat">Đăng ký</a>
+                            <a href="/register" title="" class="btn btn-primary btn-block btn-flat">Đăng ký</a>
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-5 col-xs-offset-2">

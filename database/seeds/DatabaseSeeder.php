@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	// $this->call(UsersTableSeeder::class);
-    	$this->call(OrderDetailsTableSeeder::class);
+    	$this->call(CategoriesTableSeeder::class);
     }
 }
 
@@ -123,6 +123,7 @@ class UsersTableSeeder extends Seeder{
 				'level'=>'1',		
 				'avatar'=>'hinh1.jpg',		
 				'address'=>'Đà Nẵng - Viêt Nam',		
+				'status' => 1
 				'phone'=>'0987665431'
 	
 			],
@@ -135,6 +136,7 @@ class UsersTableSeeder extends Seeder{
 				'level'=>'1',		
 				'avatar'=>'hinh1.jpg',		
 				'address'=>'Đà Nẵng - Viêt Nam',		
+				'status' => 1
 				'phone'=>'0987665431'
 	
 			],
@@ -147,6 +149,7 @@ class UsersTableSeeder extends Seeder{
 				'level'=>'1',		
 				'avatar'=>'hinh1.jpg',		
 				'address'=>'Quảng Nam - Viêt Nam',		
+				'status' => 1
 				'phone'=>'0987665431'
 	
 			],	
