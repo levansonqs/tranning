@@ -24,7 +24,7 @@ class Product extends Model
     public function getItems(){
            return DB::table('categories')
            ->join('products', 'categories.id', '=', 'products.cate_id')
-           ->select('products.*', 'categories.name as catName')
+           ->select('products.*', 'categories.name as catName')->orderBy('id','DESC')
            ->get();
     }
 
@@ -38,6 +38,7 @@ class Product extends Model
         $this->cate_id = $request->cate_id;
         $this->images = $request->fileName;
         $this->status = 1;
+        $this->detail = $request->detail;
         return $this->save();
     }
     public function getItem($id){    
@@ -55,6 +56,7 @@ class Product extends Model
         $objProduct->total = $request->total;
         $objProduct->user_id = 1;
         $objProduct->cate_id = $request->cate_id;
+        $objProduct->detail = $request->detail;
         // dd(($request->file('image')));
         if(!empty($request->file('image'))){
             if($request->image != " " ){

@@ -147,6 +147,17 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 			'as'=>'admin.order.delete'
 		]);
 	});
+<<<<<<< HEAD
+=======
+
+	Route::post('productdetail/{id}',[
+		'uses'=>'ProductController@getDetail',
+		'as'=>'admin.productdetail'
+	]);
+
+
+
+>>>>>>> 5915417861a977ef95caffb4020e7fd5ee387dee
 });
 Route::group(['namespace'=>'Shop'], function(){
 	Route::get('index', [

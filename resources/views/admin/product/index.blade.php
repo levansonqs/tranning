@@ -55,15 +55,15 @@
  								$urlHinh = Storage::url($picName);
  								@endphp
  								<tr>
- 								{{-- 	@php
- 										dd($item);
- 									@endphp --}}
  									<td>{{ $stt++ }}</td>
  									<td>{{ $item->name }}</td> 								
  									<td>{{ $item->price }}</td> 								
  									<td><img src="{{ $urlHinh}}" class="img-responsive thumbnail"></td> 		
  									<td>{{ $item->description }} <br> <br>
-									<button class="btn btn-primary pDetail"  data-toggle="modal" data-target="#detailModal">Chi tiết</button>			
+ 										<form action="" method="post">
+ 											{{csrf_field()}}
+ 											<a  href="javascript:void(0)" class="btn btn-primary pDetail"  data-toggle="modal" data-target="#detailModal" pid = "{{$item->id}}">Chi tiết</a>	
+ 										</form>		
  									</td> 									
  									<td>{{ $item->discount }} %</td> 									
  									<td>{{ $item->total }}</td> 
@@ -82,20 +82,7 @@
  		</div>
  		<!-- Modal -->
  		<div id="detailModal" class="modal fade" role="dialog">
- 			<div class="modal-dialog">
- 				<!-- Modal content-->
- 				<div class="modal-content">
- 					<div class="modal-header">
- 						<button type="button" class="close" data-dismiss="modal">&times;</button>
- 						<h4 class="modal-title">Chi tiết sản phẩm</h4>
- 					</div>
- 					<div class="modal-body">
- 						<p></p>
- 					</div>
- 					<div class="modal-footer">
- 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
- 					</div>
- 				</div>
+ 			<div class="modal-dialog modal-lg"" id="productDetail">
 
  			</div>
  		</div>
