@@ -147,8 +147,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 			'as'=>'admin.order.delete'
 		]);
 	});
-<<<<<<< HEAD
-=======
+
 
 	Route::post('productdetail/{id}',[
 		'uses'=>'ProductController@getDetail',
@@ -157,14 +156,14 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 
 
 
->>>>>>> 5915417861a977ef95caffb4020e7fd5ee387dee
+
 });
-Route::group(['namespace'=>'Shop'], function(){
-	Route::get('index', [
-		'uses'  => 'IndexController@index',
-		'as'    => 'shop.index.index'
-	]);
-});
+// Route::group(['namespace'=>'Shop'], function(){
+// 	Route::get('index', [
+// 		'uses'  => 'IndexController@index',
+// 		'as'    => 'shop.index.index'
+// 	]);
+// });
 
 
 
