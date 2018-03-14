@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Product extends Model
 {
@@ -21,7 +22,10 @@ class Product extends Model
     }
 
     public function getItems(){
-        return $this->orderBy('id','DESC')->get();
+           return DB::table('categories')
+           ->join('products', 'categories.id', '=', 'products.cate_id')
+           ->select('products.*', 'categories.name as catName')
+           ->get();
     }
 
     public function addItem($request){
@@ -41,20 +45,29 @@ class Product extends Model
     }
 
     public function editItem($request,$id){
-        $objProject = $this->find($id);
-        $objProject->name = $request->name;
-        $objProject->link = $request->link;
-        $objProject->preview_text = $request->preview_text;
-        $objProject->pcat_id = $request->pcat_id;
-        if(!empty($request->file('picture'))){
-            $objProject->picture = $request->picture;
+        // dd($request->image);
+        $objProduct = $this->find($id);
+        $objProduct->name = $request->name;
+        $objProduct->price = $request->price;
+        $objProduct->description = $request->description;
+        // $objProduct->images = $request->images;
+        $objProduct->discount = $request->discount;
+        $objProduct->total = $request->total;
+        $objProduct->user_id = 1;
+        $objProduct->cate_id = $request->cate_id;
+        // dd(($request->file('image')));
+        if(!empty($request->file('image'))){
+            if($request->image != " " ){
+                $objProduct->images = $request->image;
+            }
+            
         }
-        return $objProject->save();
+        return $objProduct->save();
     }
 
     public function delItem($id)
-        {
-            $objItem = $this->findOrFail($id);
-            return $objItem->delete();
-        }
+    {
+        $objItem = $this->findOrFail($id);
+        return $objItem->delete();
+    }
 }

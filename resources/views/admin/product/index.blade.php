@@ -39,6 +39,7 @@
  									<th>Mô tả</th> 									
  									<th>Giảm giá</th> 									
  									<th>Tổng sản phẩm</th> 									
+ 									<th>Danh mục</th> 									
  									<th>Chức năng</th>
  								</tr>
  							</thead>
@@ -54,16 +55,20 @@
  								$urlHinh = Storage::url($picName);
  								@endphp
  								<tr>
+ 								{{-- 	@php
+ 										dd($item);
+ 									@endphp --}}
  									<td>{{ $stt++ }}</td>
  									<td>{{ $item->name }}</td> 								
  									<td>{{ $item->price }}</td> 								
  									<td><img src="{{ $urlHinh}}" class="img-responsive thumbnail"></td> 		
  									<td>{{ $item->description }}</td> 									
  									<td>{{ $item->discount }} %</td> 									
- 									<td>{{ $item->total }}</td> 									
+ 									<td>{{ $item->total }}</td> 
+ 									<td> {{$item->catName}} </td>									
  									<td class="text-left">
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
- 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-remove"></i>  Xóa</a>
+ 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>
  									</td>
  								</tr> 
  								@endforeach

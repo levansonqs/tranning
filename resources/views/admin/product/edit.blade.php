@@ -24,12 +24,15 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title text-success">DANH SÁCH SẢN PHẨM</h3>
+            <div class="col-md-offset-11">
+               <a href=" {{ route('admin.product.index') }} " class="btn btn-primary">Quay lại</a>
+            </div>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
            <div class="row">
             <div class="col-md-5">
-              <form role="form" method="post" action="{{ route('admin.product.add') }}" id=""  enctype='multipart/form-data'>
+              <form role="form" method="post" action="{{ route('admin.product.edit',$objProduct->id) }}" id=""  enctype='multipart/form-data'>
                 {{csrf_field()}}              
                 <div class="row">
                   <div class="form-group col-md-12">
@@ -43,9 +46,9 @@
                     <label for="">Danh mục cha</label>
                     <select name="cate_id" id="input" class="form-control" required="required">
                       <option value="0">--Chọn danh mục cha --</option>}
-                      option
-                      @php                     
-                      cat_parent($objCats=[]);
+                      @php
+                        cat_parent($objmCategory,$objProduct->parent_id,'',$select = $objProduct->cate_id );
+                        // echo $objProduct ->cate_id;
                       @endphp
                     </select>
                   </div>
@@ -68,7 +71,7 @@
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label for="">Chọn ảnh khác</label>
-                    <input type="file" class="form-control" name="image" required>              
+                    <input type="file" class="form-control" name="image" >              
                   </div>
                 </div>
                 <div class="row">

@@ -20,20 +20,11 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="activ"><a href="{{ route('admin.index.index') }}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>    
-      <li><a href=""><i class="fa fa-sliders"></i> <span>Slider</span></a></li>
-       <li class="treeview">
-          <a href="javascript:void(0)">
-            <i class="fa  fa-th-large"></i> <span>Sản phẩm</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu" style="display: none;">
-            <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-tag"></i>Danh mục</a></li>
-            <li><a href="{{ route('admin.product.index') }}"><i class="fa fa-book"></i>Sản phẩm</a></li>
-          </ul>
-        </li>
+      <li class="activ"><a href="{{ route('admin.index.index') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>    
+      <li><a href="{{ route('admin.index.index') }}"><i class="far fa-list-alt"></i> <span>Slider</span></a></li>
+      <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-tag"></i> <span>Danh mục</span></a></li>
+      <li><a href="{{ route('admin.product.index') }}"><i class="fab fa-product-hunt"></i> <span>Sản phẩm</span></a></li>
+      <li><a href="{{ route('admin.order.index') }}"><i class="fas fa-clipboard-list"></i> <span>Đơn hàng</span></a></li>
       <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
     </ul>
   </section>

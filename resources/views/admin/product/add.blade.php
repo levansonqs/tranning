@@ -41,7 +41,6 @@
                     <label for="">Danh mục cha</label>
                     <select name="cate_id" id="input" class="form-control" required="required">
                       <option value="0">--Chọn danh mục cha --</option>}
-                      option
                      @php
                         cat_parent($objCats);
                      @endphp

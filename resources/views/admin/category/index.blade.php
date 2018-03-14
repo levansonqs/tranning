@@ -54,7 +54,7 @@
  									<td>{{ $item->description }}</td> 									
  									<td class="text-left">
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
- 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-remove"></i>  Xóa</a>
+ 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>
  									</td>
  								</tr>
  								@php
@@ -71,7 +71,7 @@
  									<td>{{ $itemCat->description }}</td> 									
  									<td class="text-left">
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
- 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-remove"></i>  Xóa</a>
+ 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>
  									</td>
  								</tr>
  								@endforeach

@@ -1,5 +1,5 @@
 <?php 
-function cat_parent($data, $paren = 0, $str='', $select= 0) {
+function cat_parent($data, $paren = 0, $str='', $select= 0) {// $objpreduct->cate_id
     foreach ($data as $key => $value) {
         $id = $value['id'];
         $name = $value['name'];

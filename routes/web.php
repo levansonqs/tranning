@@ -6,31 +6,32 @@
 // Auth::routes();
 
 Route::group(['namespace'=>'Auth'], function(){
-    Route::group(['prefix'=>'auth'], function(){
+	Route::group(['prefix'=>'auth'], function(){
         //login user
-        Route::get('login', [
-            'uses'  => 'AuthController@getLogin',
-            'as'    => 'auth.login',
-        ]);
-        Route::post('login', [
-            'uses'  => 'AuthController@postLogin',
-            'as'    => 'auth.postLogin',
-        ]);
+		Route::get('login', [
+			'uses'  => 'AuthController@getLogin',
+			'as'    => 'auth.login',
+		]);
+		Route::post('login', [
+			'uses'  => 'AuthController@postLogin',
+			'as'    => 'auth.postLogin',
+		]);
         //logout
-        Route::get('logout', [
-            'uses'  => 'AuthController@logout',
-            'as'    => 'auth.logout',
-        ]);
+		Route::get('logout', [
+			'uses'  => 'AuthController@logout',
+			'as'    => 'auth.logout',
+		]);
         // //register
-        Route::get('register', [
-            'uses'  => 'RegisterUserController@getRegister',
-            'as'    => 'auth.register',
-        ]);
-        Route::post('register', [
-            'uses'  => 'RegisterUserController@postRegister',
-            'as'    => 'auth.register',
-        ]);
+		Route::get('register', [
+			'uses'  => 'RegisterUserController@getRegister',
+			'as'    => 'auth.register',
+		]);
+		Route::post('register', [
+			'uses'  => 'RegisterUserController@postRegister',
+			'as'    => 'auth.register',
+		]);
         //login facebook
+<<<<<<< HEAD
         Route::get('login/facebook',[
             'uses'  => 'AuthController@redirectToProvider',
             'as'    => 'auth.facebook'
@@ -47,6 +48,16 @@ Route::group(['namespace'=>'Auth'], function(){
             'uses'  => 'AuthController@googleHandleProviderCallback',
         ]);
     });
+=======
+		Route::get('login/facebook',[
+			'uses'  => 'AuthController@redirectToProvider',
+			'as'    => 'auth.facebook'
+		]);
+		Route::get('facebook/callback', [
+			'uses'  =>  'AuthController@handleProviderCallback',
+		]);
+	});
+>>>>>>> 826d4f6c7f9edc5d15ce9f58173edeb560e47420
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function(){
@@ -88,7 +99,6 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-
 	Route::prefix('product')->group(function(){
 		Route::get('index',[
 			'uses'=>'ProductController@index',
@@ -116,6 +126,36 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		Route::get('delete/{id}',[
 			'uses'=>'ProductController@delete',
 			'as'=>'admin.product.delete'
+		]);
+	});
+
+	Route::prefix('order')->group(function(){
+		Route::get('index',[
+			'uses'=>'OrderController@index',
+			'as'=>'admin.order.index'
+		]);
+
+		Route::get('add',[
+			'uses'=>'OrderController@getAdd',
+			'as'=>'admin.order.add'
+		]);
+		Route::post('add',[
+			'uses'=>'OrderController@postAdd',
+			'as'=>'admin.order.add'
+		]);
+
+		Route::get('edit/{id}',[
+			'uses'=>'OrderController@getEdit',
+			'as'=>'admin.order.edit'	
+		]);
+		Route::post('edit/{id}',[
+			'uses'=>'OrderController@postEdit',
+			'as'=>'admin.order.edit'
+		]);
+
+		Route::get('delete/{id}',[
+			'uses'=>'OrderController@delete',
+			'as'=>'admin.order.delete'
 		]);
 	});
 
