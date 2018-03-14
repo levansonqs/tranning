@@ -13,7 +13,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'          => 'required|min:6|max:32|unique:users,username',
+            'username'      => 'required|min:6|max:32|unique:users,username',
             'fullname'      => 'required',
             'password'      => 'required|min:6',
             'rePassword'    => 'required|same:password',
@@ -34,10 +34,10 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'         => 'Vui lòng nhập tên đăng nhập',
-            'name.unique'           => 'Tên đăng nhập đã trùng',
-            'name.min'              => 'Tên đăng nhập phải có ít nhất 6 kí tự',
-            'name.max'              => 'Tên đăng nhập không được quá 32 kí tự',
+            'username.required'     => 'Vui lòng nhập tên đăng nhập',
+            'username.unique'       => 'Tên đăng nhập đã trùng',
+            'username.min'          => 'Tên đăng nhập phải có ít nhất 6 kí tự',
+            'username.max'          => 'Tên đăng nhập không được quá 32 kí tự',
             'fullname.required'     => 'Vui lòng nhập Họ và tên',
             'password.required'     => 'Vui lòng nhập mật khẩu',
             'password.min'          => 'Password phải có ít nhất 6 kí tự',

@@ -1,9 +1,9 @@
 <?php
-Route::get('/', function () {
-	 return view('welcome');
-});
+// Route::get('/', function () {
+// 	 return view('welcome');
+// });
 
-Auth::routes();
+// Auth::routes();
 
 Route::group(['namespace'=>'Auth'], function(){
     Route::group(['prefix'=>'auth'], function(){
@@ -22,14 +22,14 @@ Route::group(['namespace'=>'Auth'], function(){
             'as'    => 'auth.logout',
         ]);
         // //register
-        // Route::get('register', [
-        //     'uses'  => 'RegisterController@getRegister',
-        //     'as'    => 'admin.user.register',
-        // ]);
-        // Route::post('register', [
-        //     'uses'  => 'RegisterController@postRegister',
-        //     'as'    => 'admin.user.register',
-        // ]);
+        Route::get('register', [
+            'uses'  => 'RegisterUserController@getRegister',
+            'as'    => 'auth.register',
+        ]);
+        Route::post('register', [
+            'uses'  => 'RegisterUserController@postRegister',
+            'as'    => 'auth.register',
+        ]);
     });
 });
 

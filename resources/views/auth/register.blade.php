@@ -44,7 +44,7 @@
             <div class="login-box-body">
                 <!--    <p class="login-box-msg">Đăng nhập vào trang quản trị</p>   --> 
                 <p class="login-box-msg" id="login-error" ></p>
-                <form method="post" action="/register" enctype="multipart/form-data">
+                <form method="post" action="{{ route('auth.register') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
                         <input type="text" class="form-control" placeholder="Nhập vào Username" name="username">
@@ -76,14 +76,9 @@
                         <label for="" style="color:red">{{ $errors->first('rePassword') }}</label>
                         <br>
                     </div>
-                    <div class="form-group has-feedback">
-                        <input type="file" class="form-control" name="avatar">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                        <br>
-                    </div>
+                    
                     <div class="row">
                         <div class="col-xs-8">
-                           
                         </div>
                         <div class="col-xs-5 ">
                             <a href="" title="" class="btn btn-primary btn-block btn-flat">Quay lại</a>
