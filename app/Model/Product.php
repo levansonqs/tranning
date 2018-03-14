@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Product extends Model
 {
@@ -21,7 +22,10 @@ class Product extends Model
     }
 
     public function getItems(){
-        return $this->orderBy('id','DESC')->get();
+           return DB::table('categories')
+           ->join('products', 'categories.id', '=', 'products.cate_id')
+           ->select('products.*', 'categories.name as catName')
+           ->get();
     }
 
     public function addItem($request){

@@ -44,9 +44,8 @@ class ProductController extends Controller
 
 		$objmCategory = $this->objmCategory->getItems();
 		$objProduct = Product::join('categories', 'products.cate_id', '=', 'categories.id')
-                        // ->join('users', 'products.id_user', '=', 'users.id')
-                        ->select('products.*', 'categories.name as catName', 'categories.parent_id as parent_id')
-                        ->find($id);
+					->select('products.*', 'categories.name as catName', 'categories.parent_id as parent_id')
+					->find($id);
 		return view('admin.product.edit',compact('objmCategory','objProduct'));
 	}
 
@@ -86,6 +85,7 @@ class ProductController extends Controller
 			return redirect()->route('admin.product.index');
 		}			
 	}
+
 
 
 }

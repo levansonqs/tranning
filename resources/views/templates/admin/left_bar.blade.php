@@ -24,6 +24,7 @@
       <li><a href="{{ route('admin.index.index') }}"><i class="far fa-list-alt"></i> <span>Slider</span></a></li>
       <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-tag"></i> <span>Danh mục</span></a></li>
       <li><a href="{{ route('admin.product.index') }}"><i class="fab fa-product-hunt"></i> <span>Sản phẩm</span></a></li>
+      <li><a href="{{ route('admin.order.index') }}"><i class="fas fa-clipboard-list"></i> <span>Đơn hàng</span></a></li>
       <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
     </ul>
   </section>
