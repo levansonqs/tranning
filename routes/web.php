@@ -31,7 +31,7 @@ Route::group(['namespace'=>'Auth'], function(){
 			'as'    => 'auth.register',
 		]);
         //login facebook
-<<<<<<< HEAD
+
         Route::get('login/facebook',[
             'uses'  => 'AuthController@redirectToProvider',
             'as'    => 'auth.facebook'
@@ -48,16 +48,6 @@ Route::group(['namespace'=>'Auth'], function(){
             'uses'  => 'AuthController@googleHandleProviderCallback',
         ]);
     });
-=======
-		Route::get('login/facebook',[
-			'uses'  => 'AuthController@redirectToProvider',
-			'as'    => 'auth.facebook'
-		]);
-		Route::get('facebook/callback', [
-			'uses'  =>  'AuthController@handleProviderCallback',
-		]);
-	});
->>>>>>> 826d4f6c7f9edc5d15ce9f58173edeb560e47420
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function(){
