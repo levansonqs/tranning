@@ -38,6 +38,14 @@ Route::group(['namespace'=>'Auth'], function(){
         Route::get('facebook/callback', [
             'uses'  =>  'AuthController@handleProviderCallback',
         ]);
+        //login google
+        Route::get('login/google', [
+            'uses'  => 'AuthController@googleRedirectToProvider',
+            'as'    => 'auth.google'
+        ]);
+        Route::get('google/callback', [
+            'uses'  => 'AuthController@googleHandleProviderCallback',
+        ]);
     });
 });
 

@@ -94,4 +94,36 @@ class AuthController extends Controller
         }
     }
 
+    //login google
+    public function googleRedirectToProvider()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function googleHandleProviderCallback()
+    {
+        $user = Socialite::driver('google')->stateless()->user();
+        $find = User::whereEmail($user->getEmail())->first();
+        if ($find) {
+            Auth::login($find);
+            return redirect()->route('admin.index.index');
+        } else {
+            $objUser = new user;
+            $objUser->username = $user->getName();
+            $objUser->fullname = $user->getName();
+            $objUser->email = $user->getEmail();
+            $objUser->avatar = $user->getAvatar();
+            $objUser->status = 1;
+            $objUser->level = 3;
+            $objUser->save();
+            Auth::login($objUser);
+            return redirect()->route('admin.index.index');
+        }
+    }
+
 }
