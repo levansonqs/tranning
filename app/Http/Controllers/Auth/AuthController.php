@@ -30,8 +30,9 @@ class AuthController extends Controller
             'username'  =>  $request->username,
             'password'  =>  $request->password,
         ];
+        
         $objUser = User::where('username', '=', $username)->select('status')->get();
-        // dd($objUser);
+        // dd($login);
         foreach ($objUser as $value) {
             $status = $value['status'];
         }

@@ -33,7 +33,7 @@ class User extends Authenticatable
     }
     public function setLevelAttribute($value)
     {
-        $this->attributes['level'] = 0;
+        $this->attributes['level'] = 0 ;
     }
 
     public function product() {
