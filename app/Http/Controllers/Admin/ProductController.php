@@ -21,7 +21,6 @@ class ProductController extends Controller
 	}
 	public function getAdd(){
 		$objCats = $this->objmCategory->getItems();
-		// $categories = Category::all();
 		return view('admin.product.add',['objCats'=>$objCats]);
 	}
 
@@ -41,28 +40,25 @@ class ProductController extends Controller
 		}
 	}
 
-	// public function getItem($id){
-	// 	return $this->find($id);
-	// }
-	
-	public function getEdit(){
-		return view('admin.product.edit');
+	public function getEdit($id){
+		$objProduct = $this->objmProduct->getItem($id);
+		return view('admin.product.edit',compact('objProduct'));
 	}
 
-
-	public function del($id,Request $request){
-		$objProduct = $this->objmProduct->getItem($id);			
-		$fileName = $objProduct->images;
+	public function delete(Request $request, $id){
+		$objProject = $this->objmProject->getItem($id);			
+			//kiem tra xoa file
+		$fileName = $objProject->picture;
 		if($fileName != ''){	
-			Storage::delete('public/images/'.$fileName);	
+			Storage::delete('public/files/'.$fileName);	
 		}
-		if($this->objmProduct->delItem($id,$request)){
+		if($this->objmProject->delItem($id)){
 			$request->session()->flash('msg','Xóa thành công');
-			return redirect()->route('admin.product.index');
+			return redirect()->route('admin.project.index');
 		}else{
 			$request->session()->flash('msg','Lỗi khi xóa');
-			return redirect()->route('admin.product.index');
-		}	
+			return redirect()->route('admin.project.index');
+		}			
 	}
 
 

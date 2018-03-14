@@ -23,6 +23,7 @@ class Product extends Model
     public function getItems(){
         return $this->orderBy('id','DESC')->get();
     }
+
     public function addItem($request){
         $this->name = $request->name;
         $this->price = $request->price;
@@ -51,11 +52,10 @@ class Product extends Model
         return $objProject->save();
     }
 
-    public function del($id)
-    {
+
+    public function delItem($id){
         $objItem = $this->findOrFail($id);
         return $objItem->delete();
     }
-
 
 }

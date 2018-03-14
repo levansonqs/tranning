@@ -13,7 +13,9 @@
       <li class="active">Sản phẩm</li>
     </ol>
   </section>
-
+  @php
+  // dd($objProduct->toArray());
+  @endphp
   <!-- Main content -->
   <section class="content">
 
@@ -33,7 +35,7 @@
                   <div class="form-group col-md-12">
                     <label for="">Tên</label>
                     <input type="text" class="form-control" placeholder="Nhập tên"
-                    name="name" required>              
+                    name="name" required value= "{{$objProduct->name}}">              
                   </div>
                 </div>
                 <div class="row">
@@ -42,56 +44,64 @@
                     <select name="cate_id" id="input" class="form-control" required="required">
                       <option value="0">--Chọn danh mục cha --</option>}
                       option
-                     @php                     
-                        cat_parent($objCats=[]);
-                     @endphp
-                   </select>
-                 </div>
-               </div>
-               <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="">Giá</label>
-                  <input type="number" class="form-control" placeholder="Nhập giá"
-                  name="price" required>              
+                      @php                     
+                      cat_parent($objCats=[]);
+                      @endphp
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="">Hình ảnh</label>
-                  <input type="file" class="form-control" name="image" required>              
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="">Giá</label>
+                    <input type="number" class="form-control" placeholder="Nhập giá"
+                    name="price" required value="{{$objProduct->price}}"  >              
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="">Giảm giá</label>
-                  <input type="text" class="form-control" placeholder="Nhập giảm giá"
-                  name="discount" required>              
+                @php
+                $picName = "images/".$objProduct->images;
+                $urlPic = Storage::url($picName);
+                @endphp
+                <div class="form-group" id="hinhcu">
+                  <label for="">Hình hiện tại</label>
+                  <img src="{{$urlPic}}" alt="" class="img-responsive">
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="">Tổng số lượng</label>
-                  <input type="text" class="form-control" placeholder="Nhập tổng số lượng"
-                  name="total" required>              
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="">Chọn ảnh khác</label>
+                    <input type="file" class="form-control" name="image" required>              
+                  </div>
                 </div>
-              </div>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="">Giảm giá</label>
+                    <input type="text" class="form-control" placeholder="Nhập giảm giá"
+                    name="discount" required value=" {{$objProduct->discount}} ">              
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="">Tổng số lượng</label>
+                    <input type="text" class="form-control" placeholder="Nhập tổng số lượng"
+                    name="total" required value="{{$objProduct->total}}" >              
+                  </div>
+                </div>
 
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="">Mô tả</label>
-                  <textarea name="description" id="inputDes" class="form-control" rows="3" required="required">                      
-                  </textarea>           
-                </div>
-              </div>          
-              <button type="submit" class="btn btn-primary btn-lg" >Thêm sản phẩm</button>
-            </form>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="">Mô tả</label>
+                    <textarea name="description" id="inputDes" class="form-control" rows="3" required="required"> {{$objProduct->description}}                     
+                    </textarea>           
+                  </div>
+                </div>          
+                <button type="submit" class="btn btn-primary btn-lg" >Sửa sản phẩm</button>
+              </form>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>  
+  </div>  
 </section>
 <!-- /.content -->
 </div>

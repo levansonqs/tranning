@@ -49,7 +49,7 @@
  								@foreach ($objProduct as $item)
  								@php
  								$urlEdit = route('admin.product.edit',[$item->id]);
- 								$urlDel = route('admin.product.del',[$item->id]);
+ 								$urlDel = route('admin.product.delete',[$item->id]);
  								$picName = "images/".$item->images;
  								$urlHinh = Storage::url($picName);
  								@endphp

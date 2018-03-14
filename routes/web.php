@@ -98,8 +98,8 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 
 		Route::get('delete/{id}',[
-			'uses'=>'ProductController@del',
-			'as'=>'admin.product.del'
+			'uses'=>'ProductController@delete',
+			'as'=>'admin.product.delete'
 		]);
 	});
 
