@@ -67,3 +67,6 @@ input[type="file"]{
 .thumbnail{
 	max-width: 80px !important;
 }
+.mt-2{
+	margin: 0px 10px;
+}

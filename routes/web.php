@@ -149,6 +149,11 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
+	Route::post('productdetail/{id}',[
+		'uses'=>'ProductController@getDetail',
+		'as'=>'admin.productdetail'
+	]);
+
 
 
 });

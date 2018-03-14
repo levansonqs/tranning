@@ -86,6 +86,12 @@ class ProductController extends Controller
 		}			
 	}
 
+	public function getDetail($id){
+		// $id = $request->id;
+		$objProduct = $this->objmProduct->getItem($id);
+		return view('admin.product.detail',compact('objProduct'));
+	}
+
 
 
 }
