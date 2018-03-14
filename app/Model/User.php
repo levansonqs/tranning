@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Hash;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -27,13 +27,29 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
-  
-
+    // public function setPasswordAttribute($value)
+    // {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
+    // public function setAvatarAttribute($value)
+    // {
+    //     $this->attributes['avatar'] = 'public/images/userDefault.png';
+    // }
     public function product() {
         return $this->hasMany('App\Model\Product', 'user_id');
+    }
+
+
+    public function addItem($request)
+    {
+        $this->username = $request->username;
+        $this->fullname = $request->fullname;
+        $this->email    = $request->email;
+        $this->level    = 3;
+        $this->status   = 1;
+        $this->remember_token = $request->_token;
+        $this->password = Hash::make($request->password);
+        $this->avatar   = 'userDefault.png';
+        return $this->save();
     }
 }

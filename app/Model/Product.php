@@ -51,8 +51,8 @@ class Product extends Model
         return $objProject->save();
     }
 
-    public function 
-    ($id){
+    public function del($id)
+    {
         $objItem = $this->findOrFail($id);
         return $objItem->delete();
     }

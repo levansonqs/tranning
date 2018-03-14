@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Product;
 use App\Model\Category;
+use App\Model\Product;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
