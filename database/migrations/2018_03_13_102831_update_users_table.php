@@ -15,10 +15,10 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('level')->default(0)->change();
-            $table->integer('avatar')->nullable();
-            $table->integer('address')->nullable();
-            $table->integer('phone')->nullable();
-            $table->integer('status')->default(0);
+            // $table->integer('avatar')->nullable();
+            // $table->integer('address')->nullable();
+            // $table->integer('phone')->nullable();
+            // $table->integer('status')->default(0);
         });
     }
 

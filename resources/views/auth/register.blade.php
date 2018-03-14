@@ -81,7 +81,7 @@
                         <div class="col-xs-8">
                         </div>
                         <div class="col-xs-5 ">
-                            <a href="" title="" class="btn btn-primary btn-block btn-flat">Quay lại</a>
+                            <a href="/auth/login" title="" class="btn btn-primary btn-block btn-flat">Quay lại</a>
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-5 col-xs-offset-2">

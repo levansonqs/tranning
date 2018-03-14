@@ -63,7 +63,7 @@
                            
                         </div>
                         <div class="col-xs-5 ">
-                            <a href="/register" title="" class="btn btn-primary btn-block btn-flat">Đăng ký</a>
+                            <a href="/auth/register" title="" class="btn btn-primary btn-block btn-flat">Đăng ký</a>
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-5 col-xs-offset-2">
@@ -77,7 +77,7 @@
                             <p>Bạn có thể đăng nhập qua Facebook or Google</p>
                         </div>
                         <div class="col-xs-5 ">
-                            <a href="/" title="" class="btn btn-primary btn-block btn-flat"><i class="fa fa-facebook"></i> Facebook</a>
+                            <a href="{{ route('auth.facebook') }}" title="" class="btn btn-primary btn-block btn-flat"><i class="fa fa-facebook"></i> Facebook</a>
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-5 col-xs-offset-2">
