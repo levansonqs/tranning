@@ -135,7 +135,6 @@ class AuthController extends Controller
     public function twitterHandleProviderCallback()
     {
         $user = Socialite::driver('twitter')->user();
-        // dd($user);
         $find = User::whereEmail($user->getEmail())->first();
         if ($find) {
             Auth::login($find);
@@ -144,8 +143,8 @@ class AuthController extends Controller
             $objUser = new user;
             $objUser->username = $user->nickname;
             $objUser->fullname = $user->name;
-            // $objUser->email = $user->getEmail();
-            $objUser->email = "maildemo@gmail.com";
+            $objUser->remember_token = $user->token;
+            $objUser->email = $user->getEmail();
             $objUser->avatar = $user->avatar;
             $objUser->status = 1;
             $objUser->level = 3;
