@@ -62,7 +62,7 @@
                     <div class="col-xs-8">
                       <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> Lưu đăng nhập
+                            <input type="checkbox" name="remember" id="remember" value="1"> Lưu đăng nhập
                         </label>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
       <a href="{{ route('auth.twitter') }}" class="btn btn-block btn-social btn-twitter btn-flat"><i class="fa fa-twitter"></i> Đăng nhập với Twitter</a> <br>
   </div>
 
-  <a href="#">Quên mật khẩu</a><br>
+  <a href="{{ route('password.request') }}">Quên mật khẩu</a><br>
   <a href="/auth/register" class="text-center">Đăng ký thành viên</a>
   <!-- /.social-auth-links -->
 </div>

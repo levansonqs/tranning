@@ -8,6 +8,8 @@ use Socialite;
 use Auth;
 use Hash;
 use App\Model\User;
+use Illuminate\Support\Facades\Input;
+// use Input;
 class AuthController extends Controller
 {
     public function getLogin()
@@ -25,6 +27,7 @@ class AuthController extends Controller
                 'password.required' => 'Vui lòng nhập mật khẩu',
             ]
         );
+        $remember = Input::get('remember'); 
         $username = $request->username;
         $pass = $request->password;
         $login = [
@@ -37,20 +40,15 @@ class AuthController extends Controller
         foreach ($objUser as $value) {
             $status = $value['status'];
         }
-        if ($username == '' || $pass == '') {
-            return redirect()->back();
-        }else{
-            if (Auth::attempt($login)) {
-                if ($status == 0) {
-                    return redirect()->back();
-                }else{
-                    return redirect()->route('admin.index.index');
-                }
-            }else{
+        if (Auth::attempt($login, $remember)) {
+            if ($status == 0) {
                 return redirect()->back();
+            }else{
+                return redirect()->route('admin.index.index');
             }
         }
     }
+
     public function logout()
     {
     	Auth::logout();
