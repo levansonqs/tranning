@@ -22,6 +22,7 @@
       <li class="header">MAIN NAVIGATION</li>
       <li class="activ"><a href="{{ route('admin.index.index') }}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>    
       <li><a href="{{ route('admin.index.index') }}"><i class="far fa-list-alt"></i> <span>Slider</span></a></li>
+      <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i> <span>Thành viên</span></a></li>
       <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-tag"></i> <span>Danh mục</span></a></li>
       <li><a href="{{ route('admin.product.index') }}"><i class="fab fa-product-hunt"></i> <span>Sản phẩm</span></a></li>
       <li><a href="{{ route('admin.order.index') }}"><i class="fas fa-clipboard-list"></i> <span>Đơn hàng</span></a></li>

@@ -119,5 +119,39 @@ class AuthController extends Controller
             Auth::login($objUser);
             return redirect()->route('admin.index.index');
         }
+    }  
+
+    //login twitter
+    public function twitterRedirectToProvider()
+    {
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function twitterHandleProviderCallback()
+    {
+        $user = Socialite::driver('twitter')->user();
+        // dd($user);
+        $find = User::whereEmail($user->getEmail())->first();
+        if ($find) {
+            Auth::login($find);
+            return redirect()->route('admin.index.index');
+        } else {
+            $objUser = new user;
+            $objUser->username = $user->nickname;
+            $objUser->fullname = $user->name;
+            // $objUser->email = $user->getEmail();
+            $objUser->email = "maildemo@gmail.com";
+            $objUser->avatar = $user->avatar;
+            $objUser->status = 1;
+            $objUser->level = 3;
+            $objUser->save();
+            Auth::login($objUser);
+            return redirect()->route('admin.index.index');
+        }
     }
 }

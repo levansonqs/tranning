@@ -32,22 +32,31 @@ Route::group(['namespace'=>'Auth'], function(){
 		]);
         //login facebook
 
-        Route::get('login/facebook',[
-            'uses'  => 'AuthController@redirectToProvider',
-            'as'    => 'auth.facebook'
-        ]);
-        Route::get('facebook/callback', [
-            'uses'  =>  'AuthController@handleProviderCallback',
-        ]);
+		Route::get('login/facebook',[
+			'uses'  => 'AuthController@redirectToProvider',
+			'as'    => 'auth.facebook'
+		]);
+		Route::get('facebook/callback', [
+			'uses'  =>  'AuthController@handleProviderCallback',
+		]);
         //login google
-        Route::get('login/google', [
-            'uses'  => 'AuthController@googleRedirectToProvider',
-            'as'    => 'auth.google'
-        ]);
-        Route::get('google/callback', [
-            'uses'  => 'AuthController@googleHandleProviderCallback',
-        ]);
-    });
+		Route::get('login/google', [
+			'uses'  => 'AuthController@googleRedirectToProvider',
+			'as'    => 'auth.google'
+		]);
+		Route::get('google/callback', [
+			'uses'  => 'AuthController@googleHandleProviderCallback',
+		]);
+
+         //login twitter
+		Route::get('login/twitter', [
+			'uses'  => 'AuthController@twitterRedirectToProvider',
+			'as'    => 'auth.twitter'
+		]);
+		Route::get('twitter/callback', [
+			'uses'  => 'AuthController@twitterHandleProviderCallback',
+		]);
+	});
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function(){
@@ -148,15 +157,42 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
+	Route::prefix('user')->group(function(){
+		Route::get('index',[
+			'uses'=>'UserController@index',
+			'as'=>'admin.user.index'
+		]);
+
+		Route::get('add',[
+			'uses'=>'UserController@getAdd',
+			'as'=>'admin.user.add'
+		]);
+		Route::post('add',[
+			'uses'=>'UserController@postAdd',
+			'as'=>'admin.user.add'
+		]);
+
+		Route::get('edit/{id}',[
+			'uses'=>'UserController@getEdit',
+			'as'=>'admin.user.edit'	
+		]);
+		Route::post('edit/{id}',[
+			'uses'=>'UserController@postEdit',
+			'as'=>'admin.user.edit'
+		]);
+
+		Route::get('delete/{id}',[
+			'uses'=>'UserController@delete',
+			'as'=>'admin.user.delete'
+		]);
+	});
+	
+
 
 	Route::post('productdetail/{id}',[
 		'uses'=>'ProductController@getDetail',
 		'as'=>'admin.productdetail'
 	]);
-
-
-
-
 });
 // Route::group(['namespace'=>'Shop'], function(){
 // 	Route::get('index', [

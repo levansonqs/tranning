@@ -64,4 +64,8 @@ class User extends Authenticatable
         $this->avatar   = 'userDefault.png';
         return $this->save();
     }
+
+    public function getItems(){
+        return $this->all();
+    }
 }
