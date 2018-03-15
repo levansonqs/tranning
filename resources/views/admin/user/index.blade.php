@@ -30,7 +30,7 @@
  						Thêm thành viên
  					</a>
  					<div class="box-body">
- 						<table id="tb" class="table table-bordered table-striped">
+ 						<table id="tbProduct" class="table table-bordered table-striped">
  							<thead>
  								<tr>
  									<th>ID</th>
@@ -59,6 +59,7 @@
  									<td>
  										@php
  										$check = strpos($item->avatar,'http');
+ 										// $check = var_dump($check);
  										if($check == false ){
  											if(empty($item->avatar)){
  												$picName = "images/userDefault.png";		
@@ -84,7 +85,7 @@
  											// }
  										@endphp
  										<img src="{{ $picUrl}}" class="img-responsive thumbnail">
- 										{{ dump($check)}}
+ 										{{-- {{ dump($check)}} --}}
  									</td> 
  									<td>
  										@php

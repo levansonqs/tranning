@@ -40,41 +40,35 @@ class OrderController extends Controller
 
 	public function getEdit($id){
 
-		$objmCategory = $this->objmCategory->getItems();
-		$objOrder = Order::join('categories', 'Orders.cate_id', '=', 'categories.id')
-					->select('Orders.*', 'categories.name as catName', 'categories.parent_id as parent_id')
-					->find($id);
-		return view('admin.order.edit',compact('objmCategory','objOrder'));
+		// $objmCategory = $this->objmCategory->getItems();
+		// $objOrder = Order::join('categories', 'Orders.cate_id', '=', 'categories.id')
+		// 			->select('Orders.*', 'categories.name as catName', 'categories.parent_id as parent_id')
+		// 			->find($id);
+		// return view('admin.order.edit',compact('objmCategory','objOrder'));
 	}
 
 	public function postEdit(Request $request, $id){	
-		$image = $request->file('image');
-		if(!empty($image)){
-			$objProject = $this->objmOrder->getItem($id);
-			$fileName = $objProject->image;
-			if(!empty($fileName)){
-				Storage::delete('public/images/'.$fileName);	
-			}
-			//up hình mới vào
-			$path = $request->file('image')->store('public/images/');
-			$tmp = explode('/',$path);
-			$nameNewimg = end($tmp);
-			$request->image = $nameNewimg;
-		}
+		// $image = $request->file('image');
+		// if(!empty($image)){
+		// 	$objProject = $this->objmOrder->getItem($id);
+		// 	$fileName = $objProject->image;
+		// 	if(!empty($fileName)){
+		// 		Storage::delete('public/images/'.$fileName);	
+		// 	}
+		// 	//up hình mới vào
+		// 	$path = $request->file('image')->store('public/images/');
+		// 	$tmp = explode('/',$path);
+		// 	$nameNewimg = end($tmp);
+		// 	$request->image = $nameNewimg;
+		// }
 
-		if($this->objmOrder->editItem($request,$id)){
-			$request->session()->flash('msg','Cập nhật thành công');
-			return redirect()->route('admin.order.index');
-		}
+		// if($this->objmOrder->editItem($request,$id)){
+		// 	$request->session()->flash('msg','Cập nhật thành công');
+		// 	return redirect()->route('admin.order.index');
+		// }
 	}
 
 	public function delete(Request $request, $id){
-		$objProject = $this->objmOrder->getItem($id);			
-			//kiem tra xoa file
-		$fileName = $objProject->image;
-		if($fileName != ''){	
-			Storage::delete('public/images/'.$fileName);	
-		}
 		if($this->objmOrder->delItem($id)){
 			$request->session()->flash('msg','Xóa thành công');
 			return redirect()->route('admin.order.index');

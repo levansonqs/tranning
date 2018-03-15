@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Order extends Model
 {
@@ -14,14 +15,16 @@ class Order extends Model
     public function orderDetails() {
         return $this->hasMany('App\Model\OrderDetail', 'order_id');
     }    
-    public function customers() {
-        return $this->belongTo('App\Model\Customer');
+
+    public function customers(){
+        return $this->belongTo('App\Model\User');
     }
 
     public function getItems(){
-           return DB::table('categories')
-           ->join('products', 'categories.id', '=', 'products.cate_id')
-           ->select('products.*', 'categories.name as catName')->orderBy('id','DESC')
+           return DB::table('users')
+           ->join('orders', 'orders.customer_id', '=', 'users.id')
+           // ->select('orders.*', 'categories.name as catName')
+           ->orderBy('orders.id','DESC')
            ->get();
     }
 

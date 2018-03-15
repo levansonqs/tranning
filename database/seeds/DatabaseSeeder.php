@@ -12,33 +12,33 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	// $this->call(UsersTableSeeder::class);
-    	$this->call(ProductsTableSeeder::class);
+    	$this->call(OrderDetailsTableSeeder::class);
     }
 }
 
-class CategoriesTableSeeder extends Seeder{
-	public function run() {
-		DB::table('categories')->insert([
-			[
-				'name'=>'Samsung',
-				'description'=>'Samsung chính hãng',
-				'parent_id' => 0,
+// class OrderDetailsTableSeeder extends Seeder{
+// 	public function run() {
+// 		DB::table('categories')->insert([
+// 			[
+// 				'name'=>'Samsung',
+// 				'description'=>'Samsung chính hãng',
+// 				'parent_id' => 0,
 
-			],
-			[
-				'name'=>'Sony',
-				'description'=>'Sony giá rẻ',
-				'parent_id' => 0,
-			],
-			[
-				'name'=>'HTC',
-				'description'=>'HTC giá rẻ',
-				'parent_id' => 0,
-			],
+// 			],
+// 			[
+// 				'name'=>'Sony',
+// 				'description'=>'Sony giá rẻ',
+// 				'parent_id' => 0,
+// 			],
+// 			[
+// 				'name'=>'HTC',
+// 				'description'=>'HTC giá rẻ',
+// 				'parent_id' => 0,
+// 			],
 
-		]);
-	}
-}
+// 		]);
+// 	}
+// }
 class CustomersTableSeeder extends Seeder{
 	public function run() {
 		DB::table('customers')->insert([
@@ -72,17 +72,17 @@ class OrdersTableSeeder extends Seeder{
 	public function run() {
 		DB::table('orders')->insert([
 			[
-				'customer_id'=>'1',
+				'customer_id'=>'11',
 				'order_date'=>'2018-02-28',
 				'address'=>'Tam  Kỳ - Quảng Nam',		
 			],
 			[
-				'customer_id'=>'2',
+				'customer_id'=>'10',
 				'order_date'=>'2018-03-28',
 				'address'=>'Thăng Bình',		
 			],
 			[
-				'customer_id'=>'1',
+				'customer_id'=>'11',
 				'order_date'=>'2018-02-28',
 				'address'=>'Tam  Kỳ - Quảng Nam',		
 			],
@@ -94,21 +94,18 @@ class OrderDetailsTableSeeder extends Seeder{
 	public function run() {
 		DB::table('order_details')->insert([
 			[
-				'order_id'=>'1',
-				'product_id'=>'4',
-				'price'=>'50000',		
+				'order_id'=>'5',
+				'product_id'=>'2',
 				'qty'=>'2',		
 			],
 			[
-				'order_id'=>'2',
-				'product_id'=>'5',
-				'price'=>'150000',		
+				'order_id'=>'5',
+				'product_id'=>'2',
 				'qty'=>'2',		
 			],
 			[
-				'order_id'=>'3',
-				'product_id'=>'6',
-				'price'=>'50000',		
+				'order_id'=>'6',
+				'product_id'=>'3',
 				'qty'=>'2',		
 			],
 		]);
@@ -128,7 +125,7 @@ class UsersTableSeeder extends Seeder{
 				'address'=>'Đà Nẵng - Viêt Nam',		
 				'status' => 1,
 				'phone'=>'0987665431'
-	
+
 			],
 
 			[
@@ -141,7 +138,7 @@ class UsersTableSeeder extends Seeder{
 				'address'=>'Đà Nẵng - Viêt Nam',		
 				'status' => 1,
 				'phone'=>'0987665431'
-	
+
 			],
 
 			[
@@ -154,9 +151,9 @@ class UsersTableSeeder extends Seeder{
 				'address'=>'Quảng Nam - Viêt Nam',		
 				'status' => 1,
 				'phone'=>'0987665431'
-	
+
 			],	
-						
+
 		]);
 	}
 }
@@ -176,7 +173,7 @@ class ProductsTableSeeder extends Seeder{
 				'user_id'=>'1',
 				'detail'=>'abc'		
 			],	
-						[
+			[
 				'name'=>'Sam sung 2',
 				'price'=>'100000',
 				'description'=>'sam sung giá rẻ',		
@@ -189,7 +186,7 @@ class ProductsTableSeeder extends Seeder{
 				'user_id'=>'1',
 				'detail'=>'abc'		
 			],
-						[
+			[
 				'name'=>'Sam sung 3',
 				'price'=>'100000',
 				'description'=>'sam sung giá rẻ',		
@@ -205,4 +202,31 @@ class ProductsTableSeeder extends Seeder{
 		]);
 	}
 }
+
+// class OrdersTableSeeder extends Seeder{
+// 	public function run() {
+// 		DB::table('orders')->insert([
+// 			[
+// 				'customer_id'=>'10',
+// 				'order_date'=>'2018-03-12',
+// 				'address'=>'Tam Kỳ',		
+// 			],	
+// 			[
+// 				'customer_id'=>'10',
+// 				'order_date'=>'2018-03-13',
+// 				'address'=>'Đà Nẵng',
+// 			],
+// 			[
+// 				'customer_id'=>'10',
+// 				'order_date'=>'2018-03-14',
+// 				'address'=>'Tam Kỳ',	
+// 			],	
+// 			[
+// 				'customer_id'=>'10',
+// 				'order_date'=>'2018-03-15',
+// 				'address'=>'Đà Nẵng',	
+// 			],	
+// 		]);
+// 	}
+// }
 

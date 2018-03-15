@@ -3,6 +3,29 @@ $(document).ready(function() {
 
   $('.pDetail').click(function(){ 
     var _token = $("input[name='_token']").val();
+    var id = $(this).attr("orderid");
+    var url = window.location.origin+'/admin/orderdetail/'+id;  
+    // alert(url) ;
+    // return;
+    $.ajax({
+      url:url,
+      type:'POST',
+      cache:false,
+      data:{  
+        '_token':_token,'id':id,
+      },      
+      success:function(data){       
+        $("#productDetail").html(data);
+      },
+      error:function(data){
+        alert("Có lỗi khi xử lý")
+      }
+    })
+  })
+
+
+  $('.pDetail').click(function(){ 
+    var _token = $("input[name='_token']").val();
     var id = $(this).attr("pid");
     var url = window.location.origin+'/admin/productdetail/'+id;  
     // alert(url) ;
