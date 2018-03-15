@@ -56,6 +56,23 @@ Route::group(['namespace'=>'Auth'], function(){
 		Route::get('twitter/callback', [
 			'uses'  => 'AuthController@twitterHandleProviderCallback',
 		]);
+
+		// reset passwwork
+		Route::post('password/email',[
+            'uses'  =>  'ForgotPasswordController@sendResetLinkEmail',
+            'as'    =>  'password.email'
+        ]);
+		Route::get('password/reset', [
+            'uses'  =>  'ForgotPasswordController@showLinkRequestForm',
+            'as'    =>  'password.request'
+        ]);
+        Route::post('password/reset',[
+            'uses'  =>  'ResetPasswordController@reset',
+        ]);
+        Route::get('password/reset/{token}',[
+            'uses'  =>  'ResetPasswordController@showResetForm',
+            'as'    =>  'password.reset'
+        ]);
 	});
 });
 
@@ -206,3 +223,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 
 
 
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
