@@ -23,7 +23,6 @@ class Order extends Model
     public function getItems(){
            return DB::table('users')
            ->join('orders', 'orders.customer_id', '=', 'users.id')
-           // ->select('orders.*', 'categories.name as catName')
            ->orderBy('orders.id','DESC')
            ->get();
     }
@@ -69,7 +68,20 @@ class Order extends Model
 
     public function delItem($id)
     {
-        $objItem = $this->findOrFail($id);
+       $objItem = $this->findOrFail($id);
         return $objItem->delete();
     }
+
+    public function orderDetail($id){
+        // dd($id);ss
+        return DB::table('orders')
+        ->join('order_details', 'order_details.order_id', '=', 'orders.id')
+        ->join('products', 'products.id', '=', 'order_details.product_id')
+        ->select('products.*','orders.id as order_id')
+        ->where('orders.id','=',$id)
+        ->get();
+
+    }
+
+
 }

@@ -68,4 +68,17 @@ class User extends Authenticatable
     public function getItems(){
         return $this->all();
     }
+
+    public function addUser($request){
+        $this->username =  $request->username;
+        $this->fullname  = $request->fullname;
+        $this->email = $request->email;
+        $this->level = $request->level;
+        $this->status = 1;
+        $this->remember_token = $request->_token;
+        $this->password = $request->bscryt($request->password);
+        if(empty($request->file('image') ) ){
+            $path = $request->store('/images');
+        }        
+    }
 }

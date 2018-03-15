@@ -26,7 +26,7 @@
  						<h3 class="box-title text-success">DANH SÁCH THÀNH VIÊN</h3>
  					</div>
  					<!-- /.box-header -->
- 					<a href=" {{ route('admin.category.add') }} " class="btn btn-success btn-flat btn-them"><i class="fa fa-plus"></i>
+ 					<a href=" {{ route('admin.user.add') }} " class="btn btn-success btn-flat btn-them"><i class="fa fa-plus"></i>
  						Thêm thành viên
  					</a>
  					<div class="box-body">

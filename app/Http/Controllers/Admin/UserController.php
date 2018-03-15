@@ -16,4 +16,17 @@ class UserController extends Controller
 		$objUser = $this->objmUser->getItems();
 		return view('admin.user.index',compact('objUser'));
 	}
+
+	public function getAdd(){
+		return view('admin.user.add');
+	}
+
+	public function postAdd(Request $request ){
+		
+		
+		if($this->objmUser->addUser()){
+			$request->session()->flash('msg','Thêm thành công !');
+			return redirect()->route('admin.user.index');
+		}
+	}
 }

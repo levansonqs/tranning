@@ -46,14 +46,14 @@
  								@endphp
  								@foreach ($objOrder as $item)
  								@php
- 								dump($item);
+ 								// dump($item);
  								$urlEdit = route('admin.order.edit',[$item->id]);
  								$urlDel = route('admin.order.delete',[$item->id]); 		
  								$date = date_create($item->order_date);
  								$date = date_format($date,"d/m/Y");								
  								@endphp
  								<tr>
- 									<td>{{ $stt++ }}</td>
+ 									<td>{{ $item->id }}</td>
  									<td>{{ $item->fullname }}</td> 								
  									<td>{{ $item->address }}</td> 
  									<td>{{$date}}</td>
@@ -61,7 +61,7 @@
  									<td class="text-left"">
  										<form action="" method="post" style="display: inline-block;">
  											{{csrf_field()}}
- 											<a  href="javascript:void(0)" class="btn btn-success pDetail"  data-toggle="modal" data-target="#detailModal" orderid = "{{$item->id}}">Chi tiết</a>	
+ 											<a  href="javascript:void(0)" class="btn btn-success orderDetail"  data-toggle="modal" data-target="#detailModal" orderid = "{{$item->id}}">Chi tiết</a>	
  										</form>	
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
  										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>

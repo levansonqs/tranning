@@ -16,4 +16,5 @@ class OrderDetailController extends Controller
    		$objOrderDetail = $this->objmOrderDetail->getItems();
    		return view('admin.orderdetail.index',compact('objOrderDetail'));
    	}
+
 }

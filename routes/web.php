@@ -174,35 +174,37 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-	// Route::prefix('orderdetail')->group(function(){
-	// 	Route::get('index',[
-	// 		'uses'=>'OrderDetailController@index',
-	// 		'as'=>'admin.orderdetail.index'
-	// 	]);
+	Route::post('orderdetail/{id}',['uses' => 'OrderController@getOrderDetail']);
 
-	// 	Route::get('add',[
-	// 		'uses'=>'OrderDetailController@getAdd',
-	// 		'as'=>'admin.orderdetail.add'
-	// 	]);
-	// 	Route::post('add',[
-	// 		'uses'=>'OrderDetailController@postAdd',
-	// 		'as'=>'admin.orderdetail.add'
-	// 	]);
+	Route::prefix('orderdetail')->group(function(){
+		Route::get('index',[
+			'uses'=>'OrderDetailController@index',
+			'as'=>'admin.orderdetail.index'
+		]);
 
-	// 	Route::get('edit/{id}',[
-	// 		'uses'=>'OrderDetailController@getEdit',
-	// 		'as'=>'admin.orderdetail.edit'	
-	// 	]);
-	// 	Route::post('edit/{id}',[
-	// 		'uses'=>'OrderDetailController@postEdit',
-	// 		'as'=>'admin.orderdetail.edit'
-	// 	]);
+		Route::get('add',[
+			'uses'=>'OrderDetailController@getAdd',
+			'as'=>'admin.orderdetail.add'
+		]);
+		Route::post('add',[
+			'uses'=>'OrderDetailController@postAdd',
+			'as'=>'admin.orderdetail.add'
+		]);
 
-	// 	Route::get('delete/{id}',[
-	// 		'uses'=>'OrderDetailController@delete',
-	// 		'as'=>'admin.orderdetail.delete'
-	// 	]);
-	// });
+		Route::get('edit/{id}',[
+			'uses'=>'OrderDetailController@getEdit',
+			'as'=>'admin.orderdetail.edit'	
+		]);
+		Route::post('edit/{id}',[
+			'uses'=>'OrderDetailController@postEdit',
+			'as'=>'admin.orderdetail.edit'
+		]);
+
+		Route::get('delete/{id}',[
+			'uses'=>'OrderDetailController@delete',
+			'as'=>'admin.orderdetail.delete'
+		]);
+	});
 
 
 

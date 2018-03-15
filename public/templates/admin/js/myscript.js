@@ -1,8 +1,13 @@
 
 $(document).ready(function() {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
 
-  $('.pDetail').click(function(){ 
-    var _token = $("input[name='_token']").val();
+  $('.orderDetail').click(function(){ 
+    // var _token = $("input[name='_token']").val();
     var id = $(this).attr("orderid");
     var url = window.location.origin+'/admin/orderdetail/'+id;  
     // alert(url) ;
@@ -12,13 +17,13 @@ $(document).ready(function() {
       type:'POST',
       cache:false,
       data:{  
-        '_token':_token,'id':id,
+        'id':id,
       },      
       success:function(data){       
-        $("#productDetail").html(data);
+        $("#orderDetail").html(data);
       },
       error:function(data){
-        alert("Có lỗi khi xử lý")
+        // alert("Có lỗi khi xử lý")
       }
     })
   })
@@ -28,8 +33,6 @@ $(document).ready(function() {
     var _token = $("input[name='_token']").val();
     var id = $(this).attr("pid");
     var url = window.location.origin+'/admin/productdetail/'+id;  
-    // alert(url) ;
-    // return;
     $.ajax({
       url:url,
       type:'POST',

@@ -78,4 +78,9 @@ class OrderController extends Controller
 		}			
 	}
 
+	public function getOrderDetail($id){
+		$objOrderDetail = $this->objmOrder->orderDetail($id);
+		return view('admin.order.orderdetail',compact('objOrderDetail'));
+	}
+
 }

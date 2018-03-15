@@ -8,12 +8,10 @@
   @endphp
   <title>{{$title}}</title>  
   <link rel="shortcut icon" type="image/x-icon" href="{{getenv('ABOUTME_TEMPLATE_URL')}}/img/cv-icon.png" />
-  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  {{-- <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/font-awesome/css/font-awesome.min.css"> --}}
   
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{getenv('ADMIN_TEMPLATE_URL')}}/bower_components/Ionicons/css/ionicons.min.css">

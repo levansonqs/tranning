@@ -72,4 +72,8 @@ class OrderDetail extends Model
 		return $objItem->delete();
 	}
 
+	public function order_detail(){
+		
+	}
+
 }
