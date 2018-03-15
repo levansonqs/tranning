@@ -4,8 +4,10 @@
 // });
 
 // Auth::routes();
+Auth::routes();
 
 Route::group(['namespace'=>'Auth'], function(){
+
 	Route::group(['prefix'=>'auth'], function(){
         //login user
 		Route::get('login', [
@@ -57,7 +59,7 @@ Route::group(['namespace'=>'Auth'], function(){
 			'uses'  => 'AuthController@twitterHandleProviderCallback',
 		]);
 
-		// reset passwwork
+		// reset password
 		Route::post('password/email',[
             'uses'  =>  'ForgotPasswordController@sendResetLinkEmail',
             'as'    =>  'password.email'
@@ -73,6 +75,7 @@ Route::group(['namespace'=>'Auth'], function(){
             'uses'  =>  'ResetPasswordController@showResetForm',
             'as'    =>  'password.reset'
         ]);
+		
 	});
 });
 
@@ -246,12 +249,24 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		'as'=>'admin.productdetail'
 	]);
 });
-// Route::group(['namespace'=>'Shop'], function(){
-// 	Route::get('index', [
-// 		'uses'  => 'IndexController@index',
-// 		'as'    => 'shop.index.index'
-// 	]);
-// });
+Route::group(['namespace'=>'Shop'], function(){
+	Route::get('index', [
+		'uses'  => 'IndexController@index',
+		'as'    => 'shop.index.index'
+	]);
+	Route::get('cart', [
+		'uses'  => 'CartController@indexCart',
+		'as'    => 'shop.cart.indexCart'
+	]);
+	Route::get('order', [
+		'uses'  => 'OrderController@indexOrder',
+		'as'    => 'shop.order.indexOrder'
+	]);
+	Route::get('product_detail', [
+		'uses'  => 'ProductController@indexProduct',
+		'as'    => 'shop.product.indexProduct'
+	]);
+});
 
 
 
@@ -259,6 +274,5 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 
 
 
-Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
