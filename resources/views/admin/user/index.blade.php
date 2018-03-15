@@ -44,14 +44,12 @@
  							</thead>
  							<tbody>
  								@php
- 								$stt = 1;
+ 									$stt = 1;
  								@endphp
  								@foreach ($objUser as $item)
  								@php
- 								$urlEdit = route('admin.user.edit',[$item->id]);
- 								$urlDel = route('admin.user.delete',[$item->id]);
-
- 								
+	 								$urlEdit = route('admin.user.edit',[$item->id]);
+	 								$urlDel = route('admin.user.delete',[$item->id]);
  								@endphp
  								<tr>
  									<td>{{ $stt++ }}</td>

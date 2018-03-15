@@ -17,4 +17,56 @@ class Order extends Model
     public function customers() {
         return $this->belongTo('App\Model\Customer');
     }
+
+    public function getItems(){
+           return DB::table('categories')
+           ->join('products', 'categories.id', '=', 'products.cate_id')
+           ->select('products.*', 'categories.name as catName')->orderBy('id','DESC')
+           ->get();
+    }
+
+    public function addItem($request){
+        $this->name = $request->name;
+        $this->price = $request->price;
+        $this->description = $request->description;
+        $this->discount = $request->discount;
+        $this->total = $request->total;
+        $this->user_id = 1;
+        $this->cate_id = $request->cate_id;
+        $this->images = $request->fileName;
+        $this->status = 1;
+        $this->detail = $request->detail;
+        return $this->save();
+    }
+    public function getItem($id){    
+        return $this->findOrFail($id);
+    }
+
+    public function editItem($request,$id){
+        // dd($request->image);
+        $objProduct = $this->find($id);
+        $objProduct->name = $request->name;
+        $objProduct->price = $request->price;
+        $objProduct->description = $request->description;
+        // $objProduct->images = $request->images;
+        $objProduct->discount = $request->discount;
+        $objProduct->total = $request->total;
+        $objProduct->user_id = 1;
+        $objProduct->cate_id = $request->cate_id;
+        $objProduct->detail = $request->detail;
+        // dd(($request->file('image')));
+        if(!empty($request->file('image'))){
+            if($request->image != " " ){
+                $objProduct->images = $request->image;
+            }
+            
+        }
+        return $objProduct->save();
+    }
+
+    public function delItem($id)
+    {
+        $objItem = $this->findOrFail($id);
+        return $objItem->delete();
+    }
 }
