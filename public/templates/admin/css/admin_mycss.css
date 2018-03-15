@@ -70,3 +70,11 @@ input[type="file"]{
 .mt-2{
 	margin: 0px 10px;
 }
+/*body > div > header > nav > a > span::after { 
+	content: '\f013';
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	margin:0px 0px 0px 10px;
+	text-decoration:none;
+}*/
