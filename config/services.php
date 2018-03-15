@@ -48,8 +48,8 @@ return [
     ],
 
     'twitter' => [
-        'client_id' => 'GGbASwrK0CAyKNli4TKOdTiQ5',
-        'client_secret' => 'L0hwpUJatQSNEfWy3hlhlXC91wJHM4YvxBPHBhmRDABhikzpij',
+        'client_id' => 'BVGWmTsXwOkv6ctKooKg0mBr6',
+        'client_secret' => 'G7aCn6XcH4b4U6KNroxaHAdNL673EGBu9Xc4pE6sj77TCuN8SG',
         'redirect' => 'http://localhost:8000/auth/twitter/callback',
     ],
 ];
