@@ -23,6 +23,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/templates/shopping/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/templates/shopping/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/templates/shopping/images/ico/apple-touch-icon-57-precomposed.png">
+
+   <script type="text/javascript" src="{{getenv('ADMIN_TEMPLATE_URL')}}/js/ckeditor/ckeditor.js"></script>
+   <script type="text/javascript" src="{{getenv('ADMIN_TEMPLATE_URL')}}/js/ckfinder/ckfinder.js"></script>
 </head>
 <!--/head-->
 
@@ -96,7 +99,7 @@
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                 <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="/auth/login"><i class="fa fa-lock"></i> Login</a></li>
                             </ul>
                         </div>
                     </div>
