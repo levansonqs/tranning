@@ -9,7 +9,7 @@
         @endphp
         @foreach ($objNew as $item)
         @php
-        $urlPic = "/storage/images/".$item->images;
+        $urlPic = "storage/images/".$item->images;
         $urlDetail = str_slug($item->name)."-".$item->id.".html";
         @endphp
         <div class="col-sm-4">
@@ -33,7 +33,6 @@
         @endforeach
     </div>
     <!--features_items-->
-
     <div class="category-tab">
         <!--category-tab-->
         <div class="col-sm-12">
