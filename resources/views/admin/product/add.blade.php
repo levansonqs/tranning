@@ -78,7 +78,7 @@
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="">Mô tả</label>
-                    <textarea name="description" id="inputDes" class="form-control" rows="3" required="required">                      
+                    <textarea name="description" id="inputDes" class="form-control" rows="3" required="required">mô tả sản phẩm
                     </textarea>           
                   </div>
                 </div>     

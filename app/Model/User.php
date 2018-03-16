@@ -61,7 +61,7 @@ class User extends Authenticatable
         $this->status   = 1;
         $this->remember_token = $request->_token;
         $this->password = Hash::make($request->password);
-        $this->avatar   = 'userDefault.png';
+        $this->avatar   = '';
         return $this->save();
     }
 
