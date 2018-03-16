@@ -15,9 +15,10 @@ class IndexController extends Controller
 	}
     public function index()
     {
+        $objProduct = $this->objmProduct->getItems();    
     	$objNew  = $this->objmProduct->getItemsNew();
     	$objFeatureActive  = $this->objmProduct->getItemsFeature(0,3);
     	$objFeature  = $this->objmProduct->getItemsFeature(3,3);
-    	return view('shop.index.index',compact('objNew','objFeatureActive','objFeature'));
+    	return view('shop.index.index',compact('objNew','objFeatureActive','objFeature', 'objProduct'));
     }
 }

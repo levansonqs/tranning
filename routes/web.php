@@ -260,6 +260,10 @@ Route::group(['namespace'=>'Shop'], function(){
 		'uses'  => 'CartController@indexCart',
 		'as'    => 'shop.cart.indexCart'
 	]);
+	Route::get('cart/{name}/{id}', [
+		'uses'  => 'CartController@buy',
+		'as'    => 'shop.cart.buy'
+	]);
 	Route::get('order', [
 		'uses'  => 'OrderController@indexOrder',
 		'as'    => 'shop.order.indexOrder'
@@ -267,6 +271,10 @@ Route::group(['namespace'=>'Shop'], function(){
 	Route::get('{name}-{id}.html', [
 		'uses'  => 'ProductController@indexProduct',
 		'as'    => 'shop.product.indexProduct'
+	]);
+	Route::get('cate/{name}-{id}', [
+		'uses'  => 'CateController@indexCate',
+		'as'    => 'shop.cate.indexCate'
 	]);
 });
 
