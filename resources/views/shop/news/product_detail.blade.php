@@ -27,8 +27,11 @@
 					<label>Số lượng:</label>
 					<input type="text" value="3" />
 					<button type="button" class="btn btn-fefault cart">
-						<i class="fa fa-shopping-cart"></i>
-						Thêm vào giỏ hàng
+						<a href="{{route('shop.cart.buy',['id' => $objProduct->id, 'name' => str_slug($objProduct->name)] )}}">
+							<i class="fa fa-shopping-cart"></i>
+								Thêm vào giỏ hàng
+						</a>
+						
 					</button>
 				</span>
 				<h2><b> Giá :</b> {{$objProduct->price}} $</h2>
