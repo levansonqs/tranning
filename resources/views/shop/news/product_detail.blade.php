@@ -43,13 +43,14 @@
 		<div class="col-sm-12">
 			<ul class="nav nav-tabs">
 				<li><a href="#details" data-toggle="tab">Chi tiết</a></li>
-				<li><a href="#tag" data-toggle="tab">Tag</a></li>
 				<li class="active"><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
 			</ul>
 		</div>
 		<div class="tab-content">
 			<div class="tab-pane fade" id="details" >
-			{{$objProduct->detail}}
+				<textarea name="">
+					{{$objProduct->detail}}
+				</textarea>
 			</div>
 
 			<div class="tab-pane fade" id="companyprofile" >
@@ -82,57 +83,6 @@
 						<div class="single-products">
 							<div class="productinfo text-center">
 								<img src="/templates/shopping/images/home/gallery2.jpg" alt="" />
-								<h2>$56</h2>
-								<p>Easy Polo Black Edition</p>
-								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="product-image-wrapper">
-						<div class="single-products">
-							<div class="productinfo text-center">
-								<img src="/templates/shopping/images/home/gallery4.jpg" alt="" />
-								<h2>$56</h2>
-								<p>Easy Polo Black Edition</p>
-								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="tab-pane fade" id="tag" >
-				<div class="col-sm-3">
-					<div class="product-image-wrapper">
-						<div class="single-products">
-							<div class="productinfo text-center">
-								<img src="/templates/shopping/images/home/gallery1.jpg" alt="" />
-								<h2>$56</h2>
-								<p>Easy Polo Black Edition</p>
-								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="product-image-wrapper">
-						<div class="single-products">
-							<div class="productinfo text-center">
-								<img src="/templates/shopping/images/home/gallery2.jpg" alt="" />
-								<h2>$56</h2>
-								<p>Easy Polo Black Edition</p>
-								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="product-image-wrapper">
-						<div class="single-products">
-							<div class="productinfo text-center">
-								<img src="/templates/shopping/images/home/gallery3.jpg" alt="" />
 								<h2>$56</h2>
 								<p>Easy Polo Black Edition</p>
 								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
