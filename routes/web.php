@@ -261,6 +261,10 @@ Route::group(['namespace'=>'Shop'], function(){
 		'uses'  => 'CartController@indexCart',
 		'as'    => 'shop.news.indexCart'
 	]);
+	Route::get('cart/{name}/{id}', [
+		'uses'  => 'CartController@buy',
+		'as'    => 'shop.cart.buy'
+	]);
 	Route::get('order', [
 		'uses'  => 'OrderController@indexOrder',
 		'as'    => 'shop.order.indexOrder'
@@ -269,6 +273,7 @@ Route::group(['namespace'=>'Shop'], function(){
 		'uses'  => 'ProductController@indexProduct',
 		'as'    => 'shop.product.indexProduct'
 	]);
+<<<<<<< HEAD
 
 	Route::get('contact',[
 		'uses'=>'ContactController@getContact',
@@ -291,6 +296,12 @@ Route::group(['namespace'=>'Shop'], function(){
 
 	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
 	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
+=======
+	Route::get('cate/{name}-{id}', [
+		'uses'  => 'CateController@indexCate',
+		'as'    => 'shop.cate.indexCate'
+	]);
+>>>>>>> refs/remotes/origin/master
 });
 
 
