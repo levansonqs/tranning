@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>E-Shopper</title>
     <link href="/templates/shopping/css/bootstrap.min.css" rel="stylesheet">
     <link href="/templates/shopping/css/font-awesome.min.css" rel="stylesheet">
     <link href="/templates/shopping/css/prettyPhoto.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="/templates/shopping/images/ico/favicon.ico">
+    <link rel="shortcut icon" href="/storage/images/shopping-cart.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/templates/shopping/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/templates/shopping/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/templates/shopping/images/ico/apple-touch-icon-72-precomposed.png">
@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="/templates/shopping/images/home/logo.png" alt="" /></a>
+                            <a href="index"><img src="/templates/shopping/images/home/logo.png" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -120,7 +120,7 @@
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html" class="active">Home</a></li>
+                                <li><a href="index" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>

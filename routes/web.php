@@ -5,6 +5,8 @@
 
 // Auth::routes();
 Auth::routes();
+Route::pattern('id', '[0-9]+');
+Route::pattern('name','.*');
 
 Route::group(['namespace'=>'Auth'], function(){
 
@@ -261,7 +263,7 @@ Route::group(['namespace'=>'Shop'], function(){
 		'uses'  => 'OrderController@indexOrder',
 		'as'    => 'shop.order.indexOrder'
 	]);
-	Route::get('product_detail', [
+	Route::get('{name}-{id}.html', [
 		'uses'  => 'ProductController@indexProduct',
 		'as'    => 'shop.product.indexProduct'
 	]);

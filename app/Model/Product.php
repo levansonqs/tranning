@@ -72,4 +72,16 @@ class Product extends Model
         $objItem = $this->findOrFail($id);
         return $objItem->delete();
     }
+
+    public function getItemsNew(){
+         return $this->orderBy('id','DESC')->take(6)->get();
+    }
+    public function getItemsFeature($skip,$take){
+         return $this->orderBy('buyed','DESC')->skip($skip)->take($take)->get();
+    }
+
+   //  public function getItemsFeature($skip,$take){
+   //     return $this->orderBy('buyed','DESC')->skip($skip)->take($take)->get();
+   // }
+
 }
