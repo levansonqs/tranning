@@ -249,7 +249,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 	]);
 });
 Route::group(['namespace'=>'Shop'], function(){
-	Route::get('index', [
+	Route::get('', [
 		'uses'  => 'IndexController@index',
 		'as'    => 'shop.index.index'
 	]);
