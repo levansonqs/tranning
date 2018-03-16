@@ -6,12 +6,32 @@ $(document).ready(function() {
     }
   });
 
-  $('.orderDetail').click(function(){ 
-    // var _token = $("input[name='_token']").val();
-    var id = $(this).attr("orderid");
-    var url = window.location.origin+'/admin/orderdetail/'+id;  
-    // alert(url) ;
+  $('#capnhat').click(function(){ 
+    var _token = $("input[name='_token']").val();
+    var rowId = $(this).attr("rowId");
+    var qty = $("#qty").val();
+    var url = window.location.origin+"/cap-nhat/"+rowId+"/"+qty;
+    // alert(url);
     // return;
+    $.ajax({
+      url:url,
+      type:'POST',
+      cache:false,
+      data:{  
+        '_token':_token,'rowId':rowId,';qty':qty
+      },      
+      success:function(data){       
+          window.location.href = window.location.origin;
+      },
+      error:function(data){
+        // alert("Có lỗi khi xử lý")
+      }
+    })
+  })
+
+  $('.orderDetail').click(function(){ 
+    var id = $(this).attr("orderid");
+    var url = window.location.origin+'/admin/orderdetail/'+id;      
     $.ajax({
       url:url,
       type:'POST',
@@ -27,6 +47,39 @@ $(document).ready(function() {
       }
     })
   })
+
+  $('#send').click(function(){
+   var _token = $("input[name='_token']").val();
+   var url = window.location.origin+'/contact';  
+   var fullname  = $('input[name="fullname"]').val()  ;
+   var email  = $('input[name="email"]').val()  ;
+   var message  = $('#message').val()  ;
+      // alert(_token) ;
+      // return;
+      $.ajax({
+        url:url,
+        type:'POST',
+        cache:false,
+        data:{  
+          '_token':_token,'fullname':fullname,'email':email,'message':message
+        },      
+        success:function(data){       
+          swal(
+            'Gửi thành công !',
+            'Cảm ơn bạn đã góp ý !',
+            'success'
+            ).then((result) => {
+              if (result.value) {
+                window.location.href = window.location.origin;
+              }
+            });
+            
+          },
+          error:function(data){
+            alert("Có lỗi khi xử lý")
+          }
+        })
+    })
 
 
   $('.pDetail').click(function(){ 

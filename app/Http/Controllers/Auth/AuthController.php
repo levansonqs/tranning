@@ -133,6 +133,7 @@ class AuthController extends Controller
     public function twitterHandleProviderCallback()
     {
         $user = Socialite::driver('twitter')->user();
+        // dd($user);
         $find = User::whereEmail($user->getEmail())->first();
         if ($find) {
             Auth::login($find);

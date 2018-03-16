@@ -27,6 +27,9 @@ class Product extends Model
            ->select('products.*', 'categories.name as catName')->orderBy('id','DESC')
            ->get();
     }
+    public function getItemProducts($id){
+        return $this->where('products.cate_id', '=', $id)->orderBy('id','DESC')->paginate(); 
+    }
 
     public function addItem($request){
         $this->name = $request->name;
@@ -72,4 +75,16 @@ class Product extends Model
         $objItem = $this->findOrFail($id);
         return $objItem->delete();
     }
+
+    public function getItemsNew(){
+         return $this->orderBy('id','DESC')->take(6)->get();
+    }
+    public function getItemsFeature($skip,$take){
+         return $this->orderBy('buyed','DESC')->skip($skip)->take($take)->get();
+    }
+
+   //  public function getItemsFeature($skip,$take){
+   //     return $this->orderBy('buyed','DESC')->skip($skip)->take($take)->get();
+   // }
+
 }

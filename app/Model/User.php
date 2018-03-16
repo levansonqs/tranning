@@ -61,12 +61,12 @@ class User extends Authenticatable
         $this->status   = 1;
         $this->remember_token = $request->_token;
         $this->password = Hash::make($request->password);
-        $this->avatar   = 'userDefault.png';
+        $this->avatar   = '';
         return $this->save();
     }
 
     public function getItems(){
-        return $this->all();
+        return $this->orderby('id','DESC')->get();
     }
 
     public function addUser($request){
@@ -76,9 +76,24 @@ class User extends Authenticatable
         $this->level = $request->level;
         $this->status = 1;
         $this->remember_token = $request->_token;
-        $this->password = $request->bscryt($request->password);
-        if(empty($request->file('image') ) ){
-            $path = $request->store('/images');
-        }        
+        $this->password = bcrypt($request->password);
+        $this->avatar = $request->image;
+        return $this->save();           
+    }
+
+
+    public function getItem($id){
+        return $this->find($id);
+
+    }
+    public function editItem($request,$id){
+        $objItem = $this->find($id);
+        $objItem->fullname = $request->fullname;
+        $objItem->email = $request->email;
+        if($request->file('image') != ""){
+               $objItem->avatar = $request->image;
+        }
+        $objItem->level = $request->level;      
+        return $objItem->save();
     }
 }

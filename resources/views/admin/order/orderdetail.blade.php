@@ -20,6 +20,7 @@
   			<tbody>
   				@php
   					$stt = 1;
+            dd($objOrderDetail);
   				@endphp
   				@foreach ($objOrderDetail as $item)
   				@php

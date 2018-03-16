@@ -1,3 +1,4 @@
+
 <?php
 // Route::get('/', function () {
 // 	 return view('welcome');
@@ -5,6 +6,9 @@
 
 // Auth::routes();
 Auth::routes();
+Route::pattern('id', '[0-9]+');
+Route::pattern('name','.*');
+Route::pattern('rowid','.*');
 
 Route::group(['namespace'=>'Auth'], function(){
 
@@ -60,22 +64,21 @@ Route::group(['namespace'=>'Auth'], function(){
 		]);
 
 		// reset password
-		Route::post('password/email',[
+        Route::post('password/email',[
             'uses'  =>  'ForgotPasswordController@sendResetLinkEmail',
             'as'    =>  'password.email'
-        ]);
+        ]); 
 		Route::get('password/reset', [
-            'uses'  =>  'ForgotPasswordController@showLinkRequestForm',
-            'as'    =>  'password.request'
-        ]);
-        Route::post('password/reset',[
-            'uses'  =>  'ResetPasswordController@reset',
-        ]);
-        Route::get('password/reset/{token}',[
-            'uses'  =>  'ResetPasswordController@showResetForm',
-            'as'    =>  'password.reset'
-        ]);
-		
+			'uses'  =>  'ForgotPasswordController@showLinkRequestForm',
+			'as'    =>  'password.request'
+		]);
+		Route::post('password/reset',[
+			'uses'  =>  'ResetPasswordController@reset',
+		]);
+		Route::get('password/reset/{token}',[
+			'uses'  =>  'ResetPasswordController@showResetForm',
+			'as'    =>  'password.reset'
+		]);
 	});
 });
 
@@ -250,22 +253,55 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 	]);
 });
 Route::group(['namespace'=>'Shop'], function(){
-	Route::get('index', [
+	Route::get('', [
 		'uses'  => 'IndexController@index',
 		'as'    => 'shop.index.index'
 	]);
 	Route::get('cart', [
 		'uses'  => 'CartController@indexCart',
-		'as'    => 'shop.cart.indexCart'
+		'as'    => 'shop.news.indexCart'
+	]);
+	Route::get('cart/{name}/{id}', [
+		'uses'  => 'CartController@buy',
+		'as'    => 'shop.cart.buy'
 	]);
 	Route::get('order', [
 		'uses'  => 'OrderController@indexOrder',
 		'as'    => 'shop.order.indexOrder'
 	]);
-	Route::get('product_detail', [
+	Route::get('{name}-{id}.html', [
 		'uses'  => 'ProductController@indexProduct',
 		'as'    => 'shop.product.indexProduct'
 	]);
+<<<<<<< HEAD
+
+	Route::get('contact',[
+		'uses'=>'ContactController@getContact',
+		'as'=>'shop.contact'
+	]);
+	Route::post('contact',[
+		'uses'=>'ContactController@contact',
+		'as'=>'shop.contact'
+	]);
+
+	//Order
+	Route::get('mua-hang/{id}/{tensanpham}',[
+		'as'=>'muahang',
+		'uses'=>'IndexController@muahang'
+	]);
+	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
+
+	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
+	Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'IndexController@capnhat']);
+
+	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
+	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
+=======
+	Route::get('cate/{name}-{id}', [
+		'uses'  => 'CateController@indexCate',
+		'as'    => 'shop.cate.indexCate'
+	]);
+>>>>>>> refs/remotes/origin/master
 });
 
 

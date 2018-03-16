@@ -169,6 +169,8 @@
     <script src="/templates/shopping/js/price-range.js"></script>
     <script src="/templates/shopping/js/jquery.prettyPhoto.js"></script>
     <script src="/templates/shopping/js/main.js"></script>
+    <script src="/templates/admin/js/myscript.js"></script>
+    <script src="/templates/admin/plugins/sweetalert2.all.js"></script>
 </body>
 
 </html>
