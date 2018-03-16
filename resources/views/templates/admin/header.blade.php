@@ -72,8 +72,8 @@
      
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="" class="user-image">
-                <span class="hidden-xs"></span>
+                <span class="hidden-xs"><i class="fas fa-user"></i></span>
+                
               </a>
           
               <ul class="dropdown-menu">
@@ -82,13 +82,19 @@
                   @php
                       $user = Auth::user();
                       $fullname = $user->fullname;
-                      $avatar = $user->avatar;
+                      if($user->avatar != ""){
+                          $avatar = "images/".$user->avatar;
+                      }else{
+                        $avatar = "images/userDefault.png";                     
+                      }
+                    $urlPic = Storage::url($avatar);
+                    // dump($urlPic);
                   @endphp
-                  <p class="centered"><img src="/storage/app/files/{{ $avatar }}" class="img-circle" height="55" width="60"></p>
+                  {{-- <p class="centered"><img src="{{ $urlPic }}" class="img-circle" height="55" width="60"></p> --}}
                   <h5 class="centered">{{ $fullname }}</h5>
                 @endif
                 <li class="user-header">
-                   <img src="" class="img-circle" alt="User Image">
+                   <img src="{{ $urlPic }}" class="img-circle" alt="User Image">
                   <p> 
                      {{ $fullname }}     
                   </p>
@@ -106,7 +112,7 @@
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="#" data-toggle="control-sidebar"><i class="fas fa-cog"></i></a>
           </li>
         </ul>
       </div>

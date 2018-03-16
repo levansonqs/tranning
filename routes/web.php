@@ -64,22 +64,17 @@ Route::group(['namespace'=>'Auth'], function(){
             'uses'  =>  'ForgotPasswordController@sendResetLinkEmail',
             'as'    =>  'password.email'
         ]); 
-		Route::get('password/email',[
-            'uses'  =>  'ForgotPasswordController@showLinkRequestForm',
-            'as'    =>  'password.getEmail'
-        ]); 
 		Route::get('password/reset', [
-            'uses'  =>  'ForgotPasswordController@showLinkRequestForm',
-            'as'    =>  'password.request'
-        ]);
-        Route::post('password/reset',[
-            'uses'  =>  'ResetPasswordController@reset',
-        ]);
-        Route::get('password/reset/{token}',[
-            'uses'  =>  'ResetPasswordController@showResetForm',
-            'as'    =>  'password.reset'
-        ]);
-		
+			'uses'  =>  'ForgotPasswordController@showLinkRequestForm',
+			'as'    =>  'password.request'
+		]);
+		Route::post('password/reset',[
+			'uses'  =>  'ResetPasswordController@reset',
+		]);
+		Route::get('password/reset/{token}',[
+			'uses'  =>  'ResetPasswordController@showResetForm',
+			'as'    =>  'password.reset'
+		]);
 	});
 });
 
