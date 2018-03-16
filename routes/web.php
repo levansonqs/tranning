@@ -8,6 +8,7 @@
 Auth::routes();
 Route::pattern('id', '[0-9]+');
 Route::pattern('name','.*');
+Route::pattern('rowid','.*');
 
 Route::group(['namespace'=>'Auth'], function(){
 
@@ -258,7 +259,7 @@ Route::group(['namespace'=>'Shop'], function(){
 	]);
 	Route::get('cart', [
 		'uses'  => 'CartController@indexCart',
-		'as'    => 'shop.cart.indexCart'
+		'as'    => 'shop.news.indexCart'
 	]);
 	Route::get('order', [
 		'uses'  => 'OrderController@indexOrder',
@@ -268,6 +269,28 @@ Route::group(['namespace'=>'Shop'], function(){
 		'uses'  => 'ProductController@indexProduct',
 		'as'    => 'shop.product.indexProduct'
 	]);
+
+	Route::get('contact',[
+		'uses'=>'ContactController@getContact',
+		'as'=>'shop.contact'
+	]);
+	Route::post('contact',[
+		'uses'=>'ContactController@contact',
+		'as'=>'shop.contact'
+	]);
+
+	//Order
+	Route::get('mua-hang/{id}/{tensanpham}',[
+		'as'=>'muahang',
+		'uses'=>'IndexController@muahang'
+	]);
+	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
+
+	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
+	Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'IndexController@capnhat']);
+
+	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
+	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
 });
 
 

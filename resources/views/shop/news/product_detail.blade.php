@@ -48,9 +48,13 @@
 		</div>
 		<div class="tab-content">
 			<div class="tab-pane fade" id="details" >
-				<textarea name="">
+				<textarea id="detail" name="">
 					{{$objProduct->detail}}
 				</textarea>
+				<script>
+					CKEDITOR.replace( 'detail');
+					CKEDITOR.config.removePlugins = 'Save,Print,Preview,Find,About,Maximize,ShowBlocks';
+				</script>
 			</div>
 
 			<div class="tab-pane fade" id="companyprofile" >

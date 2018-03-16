@@ -11,4 +11,8 @@ class CartController extends Controller
     {
     	return view('shop.news.cart');
     }
+
+    // public function post(){
+
+    // }
 }

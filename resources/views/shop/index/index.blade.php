@@ -25,6 +25,7 @@
                         <div class="overlay-content">
                             <p>{{$item->description}} </p>
                             <a href="{{ $urlDetail }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+                            <a href="{{route('muahang', ['id' => $item->id, 'tensanpham' => str_slug($item->name) ])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -341,7 +342,7 @@
                                     <img src="/templates/shopping/images/home/recommend1.jpg" alt="" />
                                     <h2>{{$item->price}} $</h2>
                                     <p> {{$item->description}} </p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                    <a href="{{route('muahang', ['id' => $item->id, 'tensanpham' => str_slug($item->name) ])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
                                 </div>
 
                             </div>
