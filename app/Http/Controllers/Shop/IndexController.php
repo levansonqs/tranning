@@ -40,12 +40,12 @@ class IndexController extends Controller
         return view('shop.news.cart',compact('content'));
     }
     public function xoasanpham($id){
-     Cart::remove($id);
-     return redirect()->route('giohang');
- }
- public function capnhat($rowid,$qty){      
-    $rowid = Request::post('rowId');
-    $qty = Request::post('qty');
-    Cart::update($id, $qty);  
-}  
+        Cart::remove($id);
+        return redirect()->route('giohang');
+    }
+    public function capnhat($rowid,$qty){      
+        $rowid = Request::post('rowId');
+        $qty = Request::post('qty');
+        Cart::update($id, $qty);  
+    }  
 }

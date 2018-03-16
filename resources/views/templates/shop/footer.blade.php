@@ -161,16 +161,19 @@
     </footer>
     <!--/Footer-->
 
+    @section('javascript')
+        <script src="/templates/shopping/js/jquery.js"></script>
+        <script src="/templates/shopping/js/bootstrap.min.js"></script>
+        <script src="/templates/shopping/js/jquery.scrollUp.min.js"></script>
+        <script src="/templates/shopping/js/price-range.js"></script>
+        <script src="/templates/shopping/js/jquery.prettyPhoto.js"></script>
+        <script src="/templates/shopping/js/main.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+        <script src="/templates/admin/js/myscript.js"></script>
+        <script src="/templates/admin/plugins/sweetalert2.all.js"></script>
+    @show
 
-    <script src="/templates/shopping/js/jquery.js"></script>
-    <script src="/templates/shopping/js/bootstrap.min.js"></script>
-    <script src="/templates/shopping/js/jquery.scrollUp.min.js"></script>
-    <script src="/templates/shopping/js/price-range.js"></script>
-    <script src="/templates/shopping/js/jquery.prettyPhoto.js"></script>
-    <script src="/templates/shopping/js/main.js"></script>
-    <script src="/templates/admin/js/myscript.js"></script>
-    <script src="/templates/admin/plugins/sweetalert2.all.js"></script>
 </body>
 
 </html>

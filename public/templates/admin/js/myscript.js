@@ -7,25 +7,23 @@ $(document).ready(function() {
   });
 
   $('#capnhat').click(function(){ 
+    // alert(2342)
     var _token = $("input[name='_token']").val();
     var rowId = $(this).attr("rowId");
     var qty = $("#qty").val();
     var url = window.location.origin+"/cap-nhat/"+rowId+"/"+qty;
-    // alert(url);
-    // return;
+    // alert(qty);
     $.ajax({
       url:url,
       type:'POST',
       cache:false,
       data:{  
-        '_token':_token,'rowId':rowId,';qty':qty
+        '_token':_token,'rowId':rowId,'qty':qty
       },      
-      success:function(data){       
+      success:function(data){
+          // alert(123)       
           window.location.href = window.location.origin;
       },
-      error:function(data){
-        // alert("Có lỗi khi xử lý")
-      }
     })
   })
 
