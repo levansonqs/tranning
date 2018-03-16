@@ -82,8 +82,8 @@
       <a href="{{ route('auth.twitter') }}" class="btn btn-block btn-social btn-twitter btn-flat"><i class="fa fa-twitter"></i> Đăng nhập với Twitter</a> <br>
   </div>
 
-  <a href="/password/resset">Quên mật khẩu</a><br>
-  <a href="/auth/register" class="text-center">Đăng ký thành viên</a>
+  <a href="{{ route('password.request') }}">Quên mật khẩu</a><br>
+  <a href="{{ route('auth.register') }}" class="text-center">Đăng ký thành viên</a>
   <!-- /.social-auth-links -->
 </div>
 <!-- /.login-box-body -->
