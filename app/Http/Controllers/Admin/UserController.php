@@ -28,6 +28,8 @@ class UserController extends Controller
 			$tmp = explode("/",$path);
 			$filename = end($tmp);
 			$request->image = $filename;
+		}else{
+			$request->image = "";
 		}
 		if($this->objmUser->addUser($request)){
 			$request->session()->flash('msg','Thêm thành công !');
@@ -57,7 +59,10 @@ class UserController extends Controller
 	public function delete(Request $request,$id){		
 		$objUser = User::find($id);
 		$img = "public/images/".$objUser->avatar;
-		Storage::delete($img);
+		$exists = Storage::disk('local')->exists($img);
+		if($exists){
+			Storage::delete($img);
+		}		
 		$result = $objUser->delete();
 		if($result){
 			$request->session()->flash('msg','Xóa user thành công !');
