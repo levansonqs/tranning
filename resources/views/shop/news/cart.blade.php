@@ -36,7 +36,7 @@
                             </td>
                         
                             <td class="cart_price">
-                                <p>{{$items->price}} $</p>
+                                <p class="cart_price_content" >{{$items->price}} $</p>
                             </td>
                             <td class="cart_quantity">
                                 <form  method="post" accept-charset="utf-8">
@@ -48,7 +48,7 @@
                                     </div>
                                 </form>
                             </td>
-                            <td><a href="javascript:void()" id="capnhat" class="btn btn-success" rowId = {{$items->rowId}} qty={{$items->qty}}>Cập nhật</a></td>    
+                            <td><a href="javascript:void(0)" id="capnhat" class="btn btn-success capnhat " price="{{$items->price}}" rowId={{$items->rowId}} qty={{$items->qty}}>Cập nhật</a></td>    
                             <td class="cart_total">
                                 <p class="cart_total_price">{{$total}} $</p>
                             </td>
