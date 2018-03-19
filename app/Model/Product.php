@@ -27,6 +27,9 @@ class Product extends Model
            ->select('products.*', 'categories.name as catName')->orderBy('id','DESC')
            ->get();
     }
+    public function getItemProducts($id){
+        return $this->where('products.cate_id', '=', $id)->orderBy('id','DESC')->paginate(); 
+    }
 
     public function addItem($request){
         $this->name = $request->name;

@@ -23,6 +23,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/templates/shopping/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/templates/shopping/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/templates/shopping/images/ico/apple-touch-icon-57-precomposed.png">
+
+   <script type="text/javascript" src="templates/admin/js/ckeditor/ckeditor.js"></script>
+   <script type="text/javascript" src="templates/admin/js/ckfinder/ckfinder.js"></script>
 </head>
 <!--/head-->
 
@@ -96,7 +99,7 @@
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                 <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="/auth/login"><i class="fa fa-lock"></i> Login</a></li>
                             </ul>
                         </div>
                     </div>
@@ -123,11 +126,10 @@
                                 <li><a href="/" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="{{ route('shop.index.index') }}">Products</a></li>
+                                        <li><a href="{{ route('shop.index.index') }}">Category</a></li>
+                                        <li><a href="{{ route('shop.index.index') }}">Contact</a></li>
+                                        <li><a href="{{ route('shop.index.index') }}">Cart</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
@@ -137,7 +139,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="404.html">404</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="/contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
