@@ -292,7 +292,8 @@ Route::group(['namespace'=>'Shop'], function(){
 
 	Route::post('/cap-nhat',['as'=>'capnhat','uses'=>'IndexController@capnhat']);
 	
-	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
+	Route::get('dat-hang',['as'=>'dathang','uses'=>'IndexController@getDathang']);
+	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@postDathang']);
 	// Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
 
 	Route::get('cate/{name}-{id}', [
