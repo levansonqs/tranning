@@ -176,6 +176,10 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function()
 	});
 
 	Route::post('orderdetail/{id}',['uses' => 'OrderController@getOrderDetail']);
+	//in hoa don
+	Route::get('print_receipt/{id}',[
+
+	]);
 
 	Route::prefix('orderdetail')->middleware('manager')->group(function(){
 		Route::get('index',[

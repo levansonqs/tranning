@@ -49,6 +49,7 @@
  								// dump($item);
  								$urlEdit = route('admin.order.edit',[$item->id]);
  								$urlDel = route('admin.order.delete',[$item->id]); 		
+ 								$urlPrint = route('admin.order.delete',[$item->id]); 		
  								$date = date_create($item->order_date);
  								$date = date_format($date,"d/m/Y");								
  								@endphp
@@ -65,6 +66,7 @@
  										</form>	
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
  										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>
+ 										<a href="{{ $urlPrint }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-list"></i> Xuất hóa đơn</a>
  									</td>
  								</tr> 
  								@endforeach
