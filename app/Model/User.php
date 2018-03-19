@@ -96,4 +96,15 @@ class User extends Authenticatable
         $objItem->level = $request->level;      
         return $objItem->save();
     }
+
+    public function delItem($id){
+        $objItem =  $this->findOrFail($id);
+        if($objItem->level == ''){           
+            return 'failed';
+        }else {          
+            return $objItem->delete();
+        }
+    }
+
+
 }

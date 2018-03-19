@@ -71,18 +71,6 @@
  										}else{
  											$picUrl = "$item->avatar";
  										}
-
- 											// if(empty($item->avatar)){
- 											// 	$picName = "images/userDefault.png";		
- 											// 	$picUrl  = Storage::url($picName);
- 											// }elseif( strpos($item->avatar,'http://') ){
- 											// 	$picUrl = $item->avatar;
- 											// 	// dd($picUrl);
- 											// }
- 											// else{
- 											// 	$picName = "images/".$item->avatar;		
- 											// 	$picUrl  = Storage::url($picName);
- 											// }
  										@endphp
  										<img src="{{ $picUrl}}" class="img-responsive thumbnail">
  										{{-- {{ dump($check)}} --}}
@@ -91,19 +79,22 @@
  										@php
  										switch ($item->level) {
  											case '1':
- 											echo "Admin";
- 											break;
+ 												echo "Admin";
+ 												break;
  											case '2' :
- 											echo  "Quản lý";
+ 												echo  "Quản lý";
  											default:
- 											echo "Khách hàng";
- 											break;
+ 												echo "Khách hàng";
+ 												break;
  										}
  										@endphp
  									</td> 									
- 									<td class="text-left">
+ 									<td class="text-left"> 									
  										<a href="{{ $urlEdit }}" class="btn btn-primary btn-sm btn-del editItem "><i class="fa fa-edit"></i>  Sửa</a>
- 										<a href="{{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>
+ 										@if($item->level != 1)
+ 										<a href="php  {{ $urlDel }}" class="btn btn-danger btn-sm btn-del delItem "><i class="fa fa-trash"></i>  Xóa</a>
+ 										@endif
+ 									
  									</td>
  								</tr>
  								@endforeach
