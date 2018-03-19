@@ -83,4 +83,8 @@ class OrderController extends Controller
 		return view('admin.order.orderdetail',compact('objOrderDetail'));
 	}
 
+	public function printReceipt($id){
+		return view('admin.order.receipt');
+	}
+
 }
