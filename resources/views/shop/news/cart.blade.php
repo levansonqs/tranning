@@ -31,7 +31,6 @@
                                     $url = "storage/images/".($items->options['image']);
                                     $total = $items->price * $items->qty;
                                 @endphp
-
                                 <a href=""><img src="{{$url}}" class="img-responsive thumbnail" style="max-height: 120px;"></a>
                             </td>
                         

@@ -19,7 +19,7 @@ $(document).ready(function() {
       data:{'_token':_token,'rowId':rowId,'qty':qty, 'price':price},      
       success:function(data){
         var total = data['total'] + " $";
-        _this.closest('tr').find('p.cart_total_price').text(total);
+        _this.closest('tr').find('p.cart_total_price').text(total);    
       },
     })
   });

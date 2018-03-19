@@ -41,6 +41,7 @@ class IndexController extends Controller
         return view('shop.news.cart',compact('content'));
     }
     public function xoasanpham($id){
+
         Cart::remove($id);
         return redirect()->route('giohang');
     }
@@ -55,4 +56,12 @@ class IndexController extends Controller
             return response()->json(['total'=>$total, 'rowid'=>$rowid]);
         }
     }  
-}
+ }
+//  public function capnhat($rowid,$qty){  
+//     // dump($rowid);    
+//     // $rowid = Request::post('rowId');
+//     // $qty = Request::post('qty');
+//     // Cart::update($id, $qty);  
+//       $result =  Cart::update('7faa3643ef39f6ba1bf0e45b60dd9c52', 2); // Will update the quantity
+//       dump($result);
+// }  
