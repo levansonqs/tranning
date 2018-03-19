@@ -14,6 +14,7 @@
     <link href="/templates/shopping/css/animate.css" rel="stylesheet">
     <link href="/templates/shopping/css/main.css" rel="stylesheet">
     <link href="/templates/shopping/css/responsive.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>

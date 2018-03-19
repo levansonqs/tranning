@@ -1,33 +1,28 @@
 
 $(document).ready(function() {
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-  });
+  // $.ajaxSetup({
+  //   headers: {
+  //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  //   }
+  // });
 
   $('.capnhat').click(function(){ 
+    var _this = $(this);
     var _token = $("input[name='_token']").val();
-    var rowId = $(this).attr("rowId");
-    var qty = $("#qty").val();
-    var url = window.location.origin+"/cap-nhat/"+rowId+"/"+qty;
-    // alert(url);
-    // return;
+    var rowId = _this.attr("rowId");
+    var price = _this.attr("price");
+    var qty = _this.closest('tr').find('.cart_quantity_input').val();
+    var url = window.location.origin+"/cap-nhat";
     $.ajax({
       url:url,
       type:'POST',
-      cache:false,
-      data:{  
-        '_token':_token,
-      },      
-      success:function(data){       
-          location.reload();
+      data:{'_token':_token,'rowId':rowId,'qty':qty, 'price':price},      
+      success:function(data){
+        var total = data['total'] + " $";
+        _this.closest('tr').find('p.cart_total_price').text(total);    
       },
-      error:function(data){
-        // alert("Có lỗi khi xử lý")
-      }
     })
-  })
+  });
 
   $('.orderDetail').click(function(){ 
     var id = $(this).attr("orderid");
@@ -103,10 +98,10 @@ $(document).ready(function() {
   })
 
   
-  jQuery('.statistic-counter').counterUp({
-    delay: 10,
-    time: 400
-  });
+  // jQuery('.statistic-counter').counterUp({
+  //   delay: 10,
+  //   time: 400
+  // });
 
   $('.alert').delay(3000).slideUp(600);
 

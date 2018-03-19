@@ -287,10 +287,11 @@ Route::group(['namespace'=>'Shop'], function(){
 	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
 
 	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
-	Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'OrderController@capnhat']);
 
+	Route::post('/cap-nhat',['as'=>'capnhat','uses'=>'IndexController@capnhat']);
+	
 	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
-	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
+	// Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
 
 	Route::get('cate/{name}-{id}', [
 		'uses'  => 'CateController@indexCate',
