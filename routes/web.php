@@ -77,7 +77,7 @@ Route::group(['namespace'=>'Auth'], function(){
 	});
 });
 
-Route::namespace('Admin')->prefix('admin')->group(function(){
+Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function(){
 	Route::prefix('index')->group(function() {
 		Route::get('index' , [
 			'uses' => 'IndexController@index',
@@ -85,7 +85,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-	Route::prefix('category')->group(function(){
+	Route::prefix('category')->middleware('manager')->group(function(){
 		Route::get('index',[
 			'uses'=>'CategoryController@index',
 			'as'=>'admin.category.index'
@@ -115,7 +115,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-	Route::prefix('product')->group(function(){
+	Route::prefix('product')->middleware('manager')->group(function(){
 		Route::get('index',[
 			'uses'=>'ProductController@index',
 			'as'=>'admin.product.index'
@@ -145,7 +145,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 	});
 
-	Route::prefix('order')->group(function(){
+	Route::prefix('order')->middleware('manager')->group(function(){
 		Route::get('index',[
 			'uses'=>'OrderController@index',
 			'as'=>'admin.order.index'
@@ -177,7 +177,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 
 	Route::post('orderdetail/{id}',['uses' => 'OrderController@getOrderDetail']);
 
-	Route::prefix('orderdetail')->group(function(){
+	Route::prefix('orderdetail')->middleware('manager')->group(function(){
 		Route::get('index',[
 			'uses'=>'OrderDetailController@index',
 			'as'=>'admin.orderdetail.index'
@@ -208,9 +208,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 	});
 
 
-
-
-	Route::prefix('user')->group(function(){
+	Route::prefix('user')->middleware('admin')->group(function(){
 		Route::get('index',[
 			'uses'=>'UserController@index',
 			'as'=>'admin.user.index'
@@ -235,7 +233,7 @@ Route::namespace('Admin')->prefix('admin')->group(function(){
 		]);
 
 		Route::get('delete/{id}',[
-			'uses'=>'UserController@delete',
+			'uses'=>'UserController@getDelete',
 			'as'=>'admin.user.delete'
 		]);
 	});
@@ -298,6 +296,12 @@ Route::group(['namespace'=>'Shop'], function(){
 		'as'    => 'shop.cate.indexCate'
 	]);
 
+});
+
+
+Route::get('noaccess',function(){
+	// echo "Bạn không có quyền truy cập !";
+	return view('admin.access.noaccess');
 });
 
 

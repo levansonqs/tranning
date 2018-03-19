@@ -56,16 +56,17 @@ class UserController extends Controller
 		}
 	}
 
-	public function delete(Request $request,$id){		
-		$objUser = User::find($id);
-		$img = "public/images/".$objUser->avatar;
-		$exists = Storage::disk('local')->exists($img);
-		if($exists){
-			Storage::delete($img);
-		}		
-		$result = $objUser->delete();
-		if($result){
-			$request->session()->flash('msg','Xóa user thành công !');
+	public function getDelete($id, Request $request){
+		$result = $this->objmUser->delItem($id);
+		// dd($result);
+		if($result === 'failed' ){
+			$request->session()->flash('msg','Bạn không thể xóa admin !');			
+			return redirect()->route('admin.user.index');
+		}elseif($result){
+			$request->session()->flash('msg','Xóa user thành công');
+			return redirect()->route('admin.user.index');
+		}else {
+			$request->session()->flash('msg','Lỗi khi xóa!');
 			return redirect()->route('admin.user.index');
 		}
 	}
