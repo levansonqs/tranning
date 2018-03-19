@@ -48,7 +48,7 @@
 									</div>
 								</form>
 							</td>
-							<td><a href="javascript:void()" id="capnhat" class="btn btn-success" rowId = {{$items->rowId}} qty={{$items->qty}}>Cập nhật</a></td>	
+							<td><a href="javascript:void()" class="btn btn-success capnhat" rowId = {{$items->rowId}} qty={{$items->qty}}>Cập nhật</a></td>	
 							<td class="cart_total">
 								<p class="cart_total_price">{{$total}} $</p>
 							</td>

@@ -6,7 +6,7 @@ $(document).ready(function() {
     }
   });
 
-  $('#capnhat').click(function(){ 
+  $('.capnhat').click(function(){ 
     var _token = $("input[name='_token']").val();
     var rowId = $(this).attr("rowId");
     var qty = $("#qty").val();
@@ -18,10 +18,10 @@ $(document).ready(function() {
       type:'POST',
       cache:false,
       data:{  
-        '_token':_token,'rowId':rowId,';qty':qty
+        '_token':_token,
       },      
       success:function(data){       
-          window.location.href = window.location.origin;
+          location.reload();
       },
       error:function(data){
         // alert("Có lỗi khi xử lý")
