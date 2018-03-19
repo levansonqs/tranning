@@ -1,10 +1,10 @@
 
 $(document).ready(function() {
-  // $.ajaxSetup({
-  //   headers: {
-  //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  //   }
-  // });
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
 
   $('.capnhat').click(function(){ 
     var _this = $(this);
@@ -22,6 +22,23 @@ $(document).ready(function() {
         _this.closest('tr').find('p.cart_total_price').text(total);    
       },
     })
+  });
+
+  $('.delete').click(function(){
+    var _token = $("input[name='_token']").val();
+    // var rowid = $(this).attr('rowid)');
+    // var rowid2 = $(this).attr('rowid2)');
+    var rowid = $(this).closest('tr').find('.cart_quantity rowid').val();
+    alert(rowid);
+    // var url = window.location.origin+"/xoa-san-pham";
+    // $.ajax({
+    //   url:url,
+    //   type: "GET",
+    //   data:{'_token':_token,'rowId':rowId},
+    //   success:function(data){
+
+    //   }
+    // });
   });
 
   $('.orderDetail').click(function(){ 
@@ -130,25 +147,25 @@ $(document).ready(function() {
 
 });
 
-$('#tb').DataTable( {
- "language": {
-  "url": "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Vietnamese.json"
-},
-'ordering'    : false,
-'autoWidth'   : false,
-'searching'   : true,
-'autoWidth'   : false,
-"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
-} ); 
+// $('#tb').DataTable( {
+//  "language": {
+//   "url": "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Vietnamese.json"
+// },
+// 'ordering'    : false,
+// 'autoWidth'   : false,
+// 'searching'   : true,
+// 'autoWidth'   : false,
+// "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+// } ); 
 
-$('#tbProduct').DataTable( {
- "language": {
-  "url": "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Vietnamese.json"
-},
-'ordering'    : false,
-'autoWidth'   : false,
-'searching'   : true,
-'autoWidth'   : false,
-"lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
-} ); 
+// $('#tbProduct').DataTable( {
+//  "language": {
+//   "url": "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Vietnamese.json"
+// },
+// 'ordering'    : false,
+// 'autoWidth'   : false,
+// 'searching'   : true,
+// 'autoWidth'   : false,
+// "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
+// } ); 
 
