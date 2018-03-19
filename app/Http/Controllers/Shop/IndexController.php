@@ -90,7 +90,7 @@ class IndexController extends Controller
         $order->customer_id = $idCustomer;
         $order->order_date = date('Y-m-d h:s:i');
         $order->address = $customer->address;
-        $order->total = $total = Cart::total(0, ",",".");
+        $order->total = $total = Cart::subtotal();
         // dd($order);
         // $order->save();
         $idOrder = Order::insertGetId($order->toArray());

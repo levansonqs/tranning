@@ -12,7 +12,7 @@ use DB;
 
 class OrderController extends Controller
 {
-    public function __construct(Order $objmOrder){
+	public function __construct(Order $objmOrder){
 		$this->objmOrder = $objmOrder;
 	}
 
@@ -87,17 +87,13 @@ class OrderController extends Controller
 	}
 
 	public function printReceipt($id){
-			$data = DB::table('orders')
-            ->select('products.*','order_details.*','orders.*')
-            ->join('order_details', 'order_details.order_id', '=', 'orders.id')
-            ->join('products', 'products.id', '=', 'order_details.product_id')
-            ->get();
-            $order = Order::find($id);
-
-            $customer_name = DB::table('orders')            
-            ->select('customers.*')
-            ->join('customers','customers.id', '=', 'orders.customer_id')
-            ->first()->fullname;
+		$data = Order::join('order_details','orders.id','=','order_details.order_id')
+		->join('products','products.id','=','order_details.product_id')
+		->select('products.*','order_details.*','orders.*')
+		->get();
+		// dd($data->toArray());
+		$customer_name = Order::join('customers','customers.id', '=', 'orders.customer_id')
+		->first()->fullname;
 		return view('admin.order.receipt',compact('data','order','customer_name'));
 	}
 

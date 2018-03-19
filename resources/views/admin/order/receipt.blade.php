@@ -7,7 +7,7 @@
       #dvin{
         margin-top:80px !important;
       }
-      .nhandaica{
+      .padd{
         padding-top:50px !important;
       }
       #divin{
@@ -39,19 +39,19 @@
     andivtop();
   </script>
 </head>
-<body class="nhandaica" style='background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+"'>
+<body class="padd" style='background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+"'>
   <div style="background:#fff;width:1000px;height:650px;margin:auto;margin-top:10px;border:1px solid #000;" id="dvin">
 
     <div style="width:1000px;height:40px;padding:10px 0px;margin-top:20px;">
      <div style="width:500px;float:left;text-align:center;font-weight:bold;">
       <span style="font-weight:bold;">Công ty TNHH Thành An</span><br/>
-      <span style="border-bottom:1px solid #333;">Chuyên kinh doanh Điện thoại di dộng</span> <br/>
+      <span style="border-bottom:1px solid #333;">Chuyên kinh doanh Thời trang cao cấp</span> <br/>
 
     </div>
-      @php
-                     
-                      $transaction= [];
-                   @endphp             
+    @php
+    
+    $transaction= [];
+    @endphp             
              </div>
 
              <div style="width:1000px;height:auto;padding:10px 0px;">

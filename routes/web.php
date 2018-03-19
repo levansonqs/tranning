@@ -290,15 +290,14 @@ Route::group(['namespace'=>'Shop'], function(){
 	]);
 	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
 
-<<<<<<< HEAD
-	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
-	Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'OrderController@capnhat']);
-=======
+	// Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
+	// Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'OrderController@capnhat']);
+	// 
 	Route::get('/xoa-san-pham',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
->>>>>>> 5adf818819f1c17da7386af6d0aab4e76df4b719
 
-	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
-	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
+	Route::get('dat-hang',['as'=>'dathang','uses'=>'IndexController@getDathang']);
+	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@postDathang']);
+	// Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@postDathang']);
 
 	Route::get('cate/{name}-{id}', [
 		'uses'  => 'CateController@indexCate',
@@ -312,12 +311,6 @@ Route::get('noaccess',function(){
 	// echo "Bạn không có quyền truy cập !";
 	return view('admin.access.noaccess');
 });
-
-
-
-
-
-
 
 
 // Route::get('/home', 'HomeController@index')->name('home');
