@@ -290,8 +290,12 @@ Route::group(['namespace'=>'Shop'], function(){
 	]);
 	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
 
+<<<<<<< HEAD
 	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
 	Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'OrderController@capnhat']);
+=======
+	Route::get('/xoa-san-pham',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
+>>>>>>> 5adf818819f1c17da7386af6d0aab4e76df4b719
 
 	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
 	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
