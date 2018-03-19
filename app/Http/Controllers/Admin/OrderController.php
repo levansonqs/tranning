@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Order;
+use App\Model\Product;
+use App\Model\OrderDetail;
+use App\Model\Customer;
 use DB;
 
 class OrderController extends Controller
@@ -84,7 +87,18 @@ class OrderController extends Controller
 	}
 
 	public function printReceipt($id){
-		return view('admin.order.receipt');
+			$data = DB::table('orders')
+            ->select('products.*','order_details.*','orders.*')
+            ->join('order_details', 'order_details.order_id', '=', 'orders.id')
+            ->join('products', 'products.id', '=', 'order_details.product_id')
+            ->get();
+            $order = Order::find($id);
+
+            $customer_name = DB::table('orders')            
+            ->select('customers.*')
+            ->join('customers','customers.id', '=', 'orders.customer_id')
+            ->first()->fullname;
+		return view('admin.order.receipt',compact('data','order','customer_name'));
 	}
 
 }

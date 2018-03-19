@@ -25,6 +25,7 @@ $(document).ready(function() {
   });
 
   $('.orderDetail').click(function(){ 
+    var _token = $("input[name='_token']").val();
     var id = $(this).attr("orderid");
     var url = window.location.origin+'/admin/orderdetail/'+id;      
     $.ajax({
@@ -32,7 +33,7 @@ $(document).ready(function() {
       type:'POST',
       cache:false,
       data:{  
-        'id':id,
+        'id':id,'_token':_token
       },      
       success:function(data){       
         $("#orderDetail").html(data);

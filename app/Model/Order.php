@@ -21,10 +21,10 @@ class Order extends Model
     }
 
     public function getItems(){
-           return DB::table('users')
-           ->join('orders', 'orders.customer_id', '=', 'users.id')
-           ->orderBy('orders.id','DESC')
-           ->get();
+        return $this ->join('customers', 'customers.id', '=', 'orders.customer_id')
+                     ->select('customers.*','orders.*','orders.id as order_id')
+                     ->orderBy('orders.id','DESC')
+                     ->get();
     }
 
     public function addItem($request){

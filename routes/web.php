@@ -173,13 +173,15 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function()
 			'uses'=>'OrderController@delete',
 			'as'=>'admin.order.delete'
 		]);
+
+		//in hoa don
+		Route::get('print/{id}',[
+			'uses'=>'OrderController@printReceipt',
+			'as'=>'admin.order.print'
+		]);
 	});
 
 	Route::post('orderdetail/{id}',['uses' => 'OrderController@getOrderDetail']);
-	//in hoa don
-	Route::get('print_receipt/{id}',[
-
-	]);
 
 	Route::prefix('orderdetail')->middleware('manager')->group(function(){
 		Route::get('index',[
@@ -289,12 +291,10 @@ Route::group(['namespace'=>'Shop'], function(){
 	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
 
 	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
+	Route::post('cap-nhat/{rowid}/{qty}',['as'=>'capnhat','uses'=>'OrderController@capnhat']);
 
-	Route::post('/cap-nhat',['as'=>'capnhat','uses'=>'IndexController@capnhat']);
-	
-	Route::get('dat-hang',['as'=>'dathang','uses'=>'IndexController@getDathang']);
-	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@postDathang']);
-	// Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
+	Route::post('dat-hang',['as'=>'dathang','uses'=>'IndexController@dathang']);
+	Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'IndexController@thanhtoan']);
 
 	Route::get('cate/{name}-{id}', [
 		'uses'  => 'CateController@indexCate',

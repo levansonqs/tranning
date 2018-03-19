@@ -48,16 +48,15 @@
       <span style="border-bottom:1px solid #333;">Chuyên kinh doanh Điện thoại di dộng</span> <br/>
 
     </div>
-          {{--     
-               <div style="width:500px;float:left;text-align:center;font-weight:bold;">
-               	CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM<BR/>
-               	<span style="border-bottom:1px solid #333;">Độc lập - Tự do - Hạnh phúc</span>
-               </div>  --}}    
+      @php
+                     
+                      $transaction= [];
+                   @endphp             
              </div>
 
              <div style="width:1000px;height:auto;padding:10px 0px;">
                <div style="width:500px;float:left;">
-               	<span style="margin-left:80px;">Địa chỉ :   {!! $addr['address']!!}</span>
+               	<span style="margin-left:80px;">Địa chỉ :  {{ strtoupper($order->address) }} </span>
                </div>
 
              </div>
@@ -70,7 +69,7 @@
                  <tr>
                    <td>
                     <span style="font-weight:bold;">  HỌ TÊN KHÁCH HÀNG  :</span></td>
-                    <td>  <?php echo  strtoupper( $transaction['user_name']); ?> </td> 
+                    <td> {{ $customer_name}} </td> 
                   </tr>
                   <tr>
                    <td>
@@ -98,7 +97,10 @@
              </tr>
 
              <?php  $stt=1 ?>
-             @foreach ($data as $order)
+             @php
+               // dd($data);
+             @endphp
+             @foreach ($data as $item)
 
              <tr>
                <td style="text-align: center;">
@@ -106,16 +108,16 @@
               </td>
 
               <td style="text-align:left;line-height:35px">
-               <span style="margin-left: 10px"> {!! $order['product_name'] !!}</span>  
+               <span style="margin-left: 10px"> {!! $item->name !!}</span>  
              </td>
              <td style="text-align:center;line-height:35px">
-              {!! $order['product_price'] !!}
+              {!! $item->price !!} $
             </td>
             <td style="text-align:center;line-height:35px;">
-              {!! $order['product_qty'] !!}
+              {!! $item->qty !!}
             </td>
             <td style="text-align:center;line-height:35px;">
-              {!!  number_format( $order['amount'] ,0,',','.') .' VNĐ'  !!}
+              {!!  $item->qty * $item->price  !!} $
             </td>
 
           </tr>
@@ -134,7 +136,7 @@
                 </td>
                 <td>
                   <span colspan="2" style="margin-left:5px ;font-weight: bold;font-size: 20px">
-                    {!! number_format( $transaction['amount'],0,',','.') .' VNĐ'  !!}
+                    {{ $order->total }} $
                   </span>
                 </td>
 
@@ -173,7 +175,7 @@
       <div style="height:50px;min-width:90px;position:absolute;bottom:30px;right:0px;background:#;z-index:99999;transition:all 1s;"
       id="divin">
 
-      <a href="{!! URL::to('admin/transaction/list') !!}"> <button type="" class="nutin"  style="background:#8BC34A;" >Quay lại</button></a>
+      <a href="{!! URL::to('admin/order/index') !!}"> <button type="" class="nutin"  style="background:#8BC34A;" >Quay lại</button></a>
     </div>
 
     <script>
