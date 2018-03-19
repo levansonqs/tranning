@@ -43,17 +43,23 @@
                                 <form  method="post" accept-charset="utf-8">
                                     {{csrf_field()}}
                                     <div class="cart_quantity_button">
-                                        <a class="cart_quantity_down" href="javascript:void(0)"> - </a>
+                                        <a class="cart_quantity_down capnhat" href="javascript:void(0)" price="{{$items->price}}" rowId={{$items->rowId}} qty={{$items->qty}}> - </a>
                                         <input class="cart_quantity_input" type="text" name="quantity" value="{{$items->qty}}" autocomplete="on" size="2" id="qty">
-                                        <a class="cart_quantity_up" href="javascript:void(0)"> + </a>
+                                        <a class="cart_quantity_up capnhat" href="javascript:void(0)" price="{{$items->price}}" rowId={{$items->rowId}} qty={{$items->qty}}> + </a>
                                     </div>
                                 </form>
                             </td>
-                            <td>
+                           {{--  <td>
                                 <a href="javascript:void(0)" id="capnhat" class="btn btn-success capnhat " price="{{$items->price}}" rowId={{$items->rowId}} qty={{$items->qty}}>Cập nhật</a>
-                            </td> 
-                            <td>
+                            </td>  --}}
+                            {{-- <td>
                                 <a class="btn btn-danger" href="{{ route('xoasanpham', $items->rowId) }}">Xóa</a>
+                            </td> --}}
+                            <td class="cart_quantity">
+                                <form method="post" accept-charset="utf-8">
+                                    {{ csrf_field() }}
+                                    <a class="btn btn-danger delete" id="del"  rowid="22" href="javascript:void(0)">Xóa</a>
+                                </form>
                             </td>
                             <td class="cart_total">
                                 <p class="cart_total_price">{{$prices}} $</p>
@@ -62,7 +68,7 @@
                         @endforeach
                         
                     </tbody>
-                    
+                    <p>Tổng tiền: {{$total}}</p>
                 </table>
                 <div>
                     <a href="{{ route('dathang') }}" style="float: right;" id="dathang" class="btn btn-primary">Đặt hàng</a>
@@ -71,7 +77,7 @@
         </div>
     </section> <!--/#cart_items-->
     @section('javascript')
-        <script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+        {{-- <script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer> --}}
         
     </script>
     @parent

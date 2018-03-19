@@ -41,13 +41,17 @@ class IndexController extends Controller
 
     public function giohang(){
         $content = Cart::content();  
-        $total = Cart::total();  
+         $total = Cart::subtotal(); 
         // dd($total);
         return view('shop.news.cart',compact('content', 'total'));
     }
-    public function xoasanpham($id){
-        Cart::remove($id);
-        return redirect()->route('giohang');
+    public function xoasanpham(Request $request){
+        
+         if ($request->ajax()) {
+            $rowId = $request->rowId;
+            Cart::remove($rowId);
+            return redirect()->route('giohang');
+        }
     }
     public function capnhat(Request $request){ 
 

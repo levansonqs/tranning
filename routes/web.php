@@ -288,7 +288,7 @@ Route::group(['namespace'=>'Shop'], function(){
 	]);
 	Route::get('gio-hang',['as'=>'giohang','uses'=>'IndexController@giohang']);
 
-	Route::get('xoa-san-pham/{rowid}',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
+	Route::get('/xoa-san-pham',['as'=>'xoasanpham','uses'=>'IndexController@xoasanpham']);
 
 	Route::post('/cap-nhat',['as'=>'capnhat','uses'=>'IndexController@capnhat']);
 	
