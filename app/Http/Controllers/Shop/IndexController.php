@@ -7,7 +7,10 @@ use Request as Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Product;
 use App\Model\Category;
-use DB, Cart;
+use App\Model\Customer;
+use App\Model\Order;
+use App\Model\OrderDetail;
+use DB, Cart, Session;
 
 class IndexController extends Controller
 {
@@ -38,10 +41,11 @@ class IndexController extends Controller
 
     public function giohang(){
         $content = Cart::content();  
-        return view('shop.news.cart',compact('content'));
+        $total = Cart::total();  
+        // dd($total);
+        return view('shop.news.cart',compact('content', 'total'));
     }
     public function xoasanpham($id){
-
         Cart::remove($id);
         return redirect()->route('giohang');
     }
@@ -56,12 +60,46 @@ class IndexController extends Controller
             return response()->json(['total'=>$total, 'rowid'=>$rowid]);
         }
     }  
+    public function getDathang()
+    {
+        if (Session::has('cart')) {
+            $cart = Cart::content();
+            // dd($cart);
+            $total = Cart::total(0, ",",".");  
+            return view('shop.news.order', ['cart'=>$cart, 'total'=>$total]);
+        }
+    }
+
+    public function postDathang(Request $req)
+    {
+        // dd(date('Y-m-d h:s:i'));
+        $content = Cart::content();  
+        $customer = new Customer;
+        $customer->fullname = $req->fullname;
+        $customer->email = $req->email;
+        $customer->phone = $req->phone;
+        $customer->note = $req->note;
+        $customer->address = $req->address;
+        // $customer->save();
+        $idCustomer = Customer::insertGetId($customer->toArray());
+        $order = new Order;
+        $order->customer_id = $idCustomer;
+        $order->order_date = date('Y-m-d h:s:i');
+        $order->address = $customer->address;
+        $order->total = $total = Cart::total(0, ",",".");
+        // dd($order);
+        // $order->save();
+        $idOrder = Order::insertGetId($order->toArray());
+            // dd($idOrder);
+
+        foreach ($content as $value) {
+            // dd($value);
+            $orderDetail = new OrderDetail; 
+            $orderDetail->order_id = $idOrder;
+            $orderDetail->qty = $value->qty;
+            $orderDetail->product_id = $value->id;
+            $orderDetail->save();
+        }
+        return redirect()->route('shop.index.index');
+    }
  }
-//  public function capnhat($rowid,$qty){  
-//     // dump($rowid);    
-//     // $rowid = Request::post('rowId');
-//     // $qty = Request::post('qty');
-//     // Cart::update($id, $qty);  
-//       $result =  Cart::update('7faa3643ef39f6ba1bf0e45b60dd9c52', 2); // Will update the quantity
-//       dump($result);
-// }  

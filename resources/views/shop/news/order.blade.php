@@ -3,111 +3,64 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Check out</li>
+				  <li><a href="{{route("shop.index.index") }}">Trang chủ</a></li>
+				  <li class="active">Thanh toán</li>
 				</ol>
 			</div><!--/breadcrums-->
-
-			<div class="step-one">
-				<h2 class="heading">Step1</h2>
-			</div>
-			<div class="checkout-options">
-				<h3>New User</h3>
-				<p>Checkout options</p>
-				<ul class="nav">
-					<li>
-						<label><input type="checkbox"> Register Account</label>
-					</li>
-					<li>
-						<label><input type="checkbox"> Guest Checkout</label>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-times"></i>Cancel</a>
-					</li>
-				</ul>
-			</div><!--/checkout-options-->
-
-			<div class="register-req">
-				<p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
-			</div><!--/register-req-->
-
 			<div class="shopper-informations">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="shopper-info">
-							<p>Shopper Information</p>
-							<form>
-								<input type="text" placeholder="Display Name">
-								<input type="text" placeholder="User Name">
-								<input type="password" placeholder="Password">
-								<input type="password" placeholder="Confirm password">
+							<p>Thông tin khách hàng</p>
+							<form method="post" action="{{ route('dathang') }}">
+								{{ csrf_field() }}  
+								<input type="text" name="fullname" placeholder="Họ tên (*)" required="required">
+								<input type="text" name="address"  placeholder="Địa chỉ (*)" required="required">
+								<input type="text" name="email" placeholder="Email (*)" required="required">
+								<input type="text" name="phone" placeholder="Điện thoại (*)" required="required">
+								<textarea name="note" rows="3" required="required"></textarea>  
+								<button type="submit" class="btn btn-primary btn-lg" >Thanh toán</button>
+								
 							</form>
-							<a class="btn btn-primary" href="">Get Quotes</a>
-							<a class="btn btn-primary" href="">Continue</a>
+							
 						</div>
 					</div>
-					<div class="col-sm-5 clearfix">
-						<div class="bill-to">
-							<p>Bill To</p>
-							<div class="form-one">
-								<form>
-									<input type="text" placeholder="Company Name">
-									<input type="text" placeholder="Email*">
-									<input type="text" placeholder="Title">
-									<input type="text" placeholder="First Name *">
-									<input type="text" placeholder="Middle Name">
-									<input type="text" placeholder="Last Name *">
-									<input type="text" placeholder="Address 1 *">
-									<input type="text" placeholder="Address 2">
-								</form>
-							</div>
-							<div class="form-two">
-								<form>
-									<input type="text" placeholder="Zip / Postal Code *">
-									<select>
-										<option>-- Country --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<select>
-										<option>-- State / Province / Region --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<input type="password" placeholder="Confirm password">
-									<input type="text" placeholder="Phone *">
-									<input type="text" placeholder="Mobile Phone">
-									<input type="text" placeholder="Fax">
-								</form>
-							</div>
-						</div>
-					</div>
+					
 					<div class="col-sm-4">
 						<div class="order-message">
-							<p>Shipping Order</p>
-							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
-							<label><input type="checkbox"> Shipping to bill address</label>
+							<p>Đơn hàng của bạn</p>
+							@foreach($cart as $cart)
+							<div class="content" style="width: 600px;">
+								<div style="width: 100px; float: left;">
+									<img style="width: 100px" src="storage/images/{{ $cart->options['image']}}">
+								</div>
+								<div class="media-body" style="width: 300px; float: left;">
+									<p>
+										<label>Tên sản phẩm: {{ $cart->name }}</label>
+									</p>
+									<p>
+										<label>Số lượng: {{ $cart->qty }}</label>
+									</p>
+									<p>
+										<label>Giá: {{ $cart->price }}</label>
+									</p>
+								</div>
+								<div style="clear: both;"></div>
+							</div>
+							@endforeach
+							<table class="table table-condensed total-result">
+									<tr>
+										<td>Tổng tiền</td>
+										<td><span>{{$total}} $</span></td>
+									</tr>
+								</table>
 						</div>	
 					</div>					
 				</div>
 			</div>
-			<div class="review-payment">
-				<h2>Review & Payment</h2>
-			</div>
+			
 
-			<div class="table-responsive cart_info">
+{{-- 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
@@ -221,8 +174,8 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>
-			<div class="payment-options">
+			</div> --}}
+			{{-- <div class="payment-options">
 					<span>
 						<label><input type="checkbox"> Direct Bank Transfer</label>
 					</span>
@@ -232,7 +185,7 @@
 					<span>
 						<label><input type="checkbox"> Paypal</label>
 					</span>
-				</div>
+				</div> --}}
 		</div>
 	</section> <!--/#cart_items-->
 @include('templates.shop.footer')

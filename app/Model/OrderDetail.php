@@ -7,7 +7,7 @@ use DB;
 
 class OrderDetail extends Model
 {
-	protected $table = 'order_detais';
+	protected $table = 'order_details';
 	protected $fillable = ["*"];
 	public $timestamps = true;
 

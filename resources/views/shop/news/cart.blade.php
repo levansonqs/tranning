@@ -17,6 +17,7 @@
                         <td class="price">Giá</td>
                         <td class="quantity">Số lượng</td>
                         <td class="quantity">Cập nhật</td>
+                        <td class="quantity">Xóa</td>
                         <td class="total">Tổng tiền</td>
                     </tr>
                 </thead>
@@ -29,7 +30,8 @@
                             <td class="cart_product">
                                 @php
                                     $url = "storage/images/".($items->options['image']);
-                                    $total = $items->price * $items->qty;
+                                    $prices = $items->price * $items->qty;
+                                    
                                 @endphp
                                 <a href=""><img src="{{$url}}" class="img-responsive thumbnail" style="max-height: 120px;"></a>
                             </td>
@@ -47,17 +49,24 @@
                                     </div>
                                 </form>
                             </td>
-                            <td><a href="javascript:void(0)" id="capnhat" class="btn btn-success capnhat " price="{{$items->price}}" rowId={{$items->rowId}} qty={{$items->qty}}>Cập nhật</a></td>    
-                            <td class="cart_total">
-                                <p class="cart_total_price">{{$total}} $</p>
+                            <td>
+                                <a href="javascript:void(0)" id="capnhat" class="btn btn-success capnhat " price="{{$items->price}}" rowId={{$items->rowId}} qty={{$items->qty}}>Cập nhật</a>
+                            </td> 
+                            <td>
+                                <a class="btn btn-danger" href="{{ route('xoasanpham', $items->rowId) }}">Xóa</a>
                             </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href="{{ route('xoasanpham', $items->rowId) }}"><i class="fa fa-times"></i></a>
+                            <td class="cart_total">
+                                <p class="cart_total_price">{{$prices}} $</p>
                             </td>
                         </tr>
                         @endforeach
+                        
                     </tbody>
+                    
                 </table>
+                <div>
+                    <a href="{{ route('dathang') }}" style="float: right;" id="dathang" class="btn btn-primary">Đặt hàng</a>
+                </div>
             </div>
         </div>
     </section> <!--/#cart_items-->
