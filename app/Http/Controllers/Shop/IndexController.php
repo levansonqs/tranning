@@ -69,7 +69,7 @@ class IndexController extends Controller
         if (Session::has('cart')) {
             $cart = Cart::content();
             // dd($cart);
-            $total = Cart::total(0, ",",".");  
+            $total = Cart::subtotal(); 
             return view('shop.news.order', ['cart'=>$cart, 'total'=>$total]);
         }
     }
