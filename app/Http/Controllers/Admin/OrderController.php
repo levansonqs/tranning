@@ -90,11 +90,21 @@ class OrderController extends Controller
 		$data = Order::join('order_details','orders.id','=','order_details.order_id')
 		->join('products','products.id','=','order_details.product_id')
 		->select('products.*','order_details.*','orders.*')
+		->where('orders.id',$id)
 		->get();
 		// dd($data->toArray());
 		$customer_name = Order::join('customers','customers.id', '=', 'orders.customer_id')
 		->first()->fullname;
-		return view('admin.order.receipt',compact('data','order','customer_name'));
+
+		$order = Order::join('customers','customers.id','=','orders.customer_id')
+		->select('customers.*','orders.*')
+		->where('orders.id',$id)
+		->first();
+
+		// dd($order);
+
+		// dd($customer_name);
+		return view('admin.order.receipt',compact('data','customer_name','order'));
 	}
 
 }
